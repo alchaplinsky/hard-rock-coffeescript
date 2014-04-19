@@ -1,0 +1,288 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Loops and comprehensions | Hard Rock CoffeScript</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="alchapone">
+        <meta name="description" content="CoffeScript is a little language that compiles to JavaScript created by Jeremy Ashkenas. This is and evolution of JavaScript that hides its bad parts and exposes the good parts. It&#39;s syntax is inspired by Ruby and Python and brings many features from these two languages.">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../&#39;classes/&#39;" />
+        
+        
+        <link rel="prev" href="../syntax/operators_and_alises.html" />
+        
+
+        <meta property="og:title" content="Loops and comprehensions | Hard Rock CoffeScript">
+        <meta property="og:site_name" content="Hard Rock CoffeScript">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/alchapone">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    </head>
+    <body>
+        
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+        
+    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="2.6" data-basepath=".." data-revision="1397941805999">
+    <div class="book-header">
+    <!-- Actions Left -->
+    
+    <a href="https://github.com/alchapone/hard-rock-coffeescript" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    
+    <a href="https://github.com/alchapone/hard-rock-coffeescript/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/alchapone/hard-rock-coffeescript/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+    
+
+    <!-- Title -->
+    <h1><a href="../" >Hard Rock CoffeScript</a></h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        <li>
+            <a href="https://github.com/alchapone" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/alchapone/hard-rock-coffeescript/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li>
+            <a href="https://github.com/alchapone/hard-rock-coffeescript/edit/master/syntax/loops_and_comprehensions.md" target="blank">Edit and Contribute</a>
+        </li>
+        <li class="divider"></li>
+        
+        <li data-level="0" data-path="index.html">
+            <a href="../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="installation/index.html">
+                
+                <a href="../installation/index.html">
+                    <i class="fa fa-check"></i> <b>1.</b> Installation
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="2" data-path="syntax/scoping.html">
+                
+                <a href="../syntax/scoping.html">
+                    <i class="fa fa-check"></i> <b>2.</b> Syntax
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="2.1" data-path="syntax/variables.html">
+                            
+                            <a href="../syntax/variables.html">
+                                <i class="fa fa-check"></i> <b>2.1.</b> Variables and Scope
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.2" data-path="syntax/functions.html">
+                            
+                            <a href="../syntax/functions.html">
+                                <i class="fa fa-check"></i> <b>2.2.</b> Functions
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.3" data-path="syntax/flow_control.html">
+                            
+                            <a href="../syntax/flow_control.html">
+                                <i class="fa fa-check"></i> <b>2.3.</b> Flow control
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.4" data-path="syntax/arrays_and_objects.html">
+                            
+                            <a href="../syntax/arrays_and_objects.html">
+                                <i class="fa fa-check"></i> <b>2.4.</b> Arrays and objects
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.5" data-path="syntax/operators_and_alises.html">
+                            
+                            <a href="../syntax/operators_and_alises.html">
+                                <i class="fa fa-check"></i> <b>2.5.</b> Operators and Aliases
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.6" data-path="syntax/loops_and_comprehensions.html">
+                            
+                            <a href="../syntax/loops_and_comprehensions.html">
+                                <i class="fa fa-check"></i> <b>2.6.</b> Loops and comprehensions
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="3" data-path="&#39;classes/&#39;">
+                
+                <a href="../&#39;classes/&#39;">
+                    <i class="fa fa-check"></i> <b>3.</b> Classes
+                </a>
+                
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="page-wrapper" tabindex="-1">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 88.88888888888889%;min-width: 77.77777777777777%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../installation/index.html" title="Installation" class="chapter done new-chapter" data-progress="1" style="left: 11.11111111111111%;"></a>
+    
+        <a href="../syntax/scoping.html" title="Syntax" class="chapter done new-chapter" data-progress="2" style="left: 22.22222222222222%;"></a>
+    
+        <a href="../syntax/variables.html" title="Variables and Scope" class="chapter done " data-progress="2.1" style="left: 33.333333333333336%;"></a>
+    
+        <a href="../syntax/functions.html" title="Functions" class="chapter done " data-progress="2.2" style="left: 44.44444444444444%;"></a>
+    
+        <a href="../syntax/flow_control.html" title="Flow control" class="chapter done " data-progress="2.3" style="left: 55.55555555555556%;"></a>
+    
+        <a href="../syntax/arrays_and_objects.html" title="Arrays and objects" class="chapter done " data-progress="2.4" style="left: 66.66666666666667%;"></a>
+    
+        <a href="../syntax/operators_and_alises.html" title="Operators and Aliases" class="chapter done " data-progress="2.5" style="left: 77.77777777777777%;"></a>
+    
+        <a href="../syntax/loops_and_comprehensions.html" title="Loops and comprehensions" class="chapter done " data-progress="2.6" style="left: 88.88888888888889%;"></a>
+    
+        <a href="../&#39;classes/&#39;" title="Classes" class="chapter  new-chapter" data-progress="3" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_6">
+                    
+                        <h2 id="loops-and-comprehensions">Loops and Comprehensions</h2>
+<p>Array iteration in JavaScript has a rather archaic syntax, reminiscent of an older language like C
+rather than a modern object orientated one. The introduction of ES5 improved that situation somewhat,
+with the forEach() function, but that still requires a function call every iteration and is therefore
+much slower. Again, CoffeeScript comes to the rescue, with a beautiful syntax:</p>
+<p><em>CoffeeScript</em></p>
+<pre><code>for surname in [&quot;Young&quot;, &quot;Gilmour&quot;, &quot;Blackmore&quot;]
+  console.log &quot;David #{surname}&quot;
+</code></pre><p><em>JavaScript</em></p>
+<pre><code>var surname, _i, _len, _ref;
+_ref = [&quot;Young&quot;, &quot;Gilmour&quot;, &quot;Blackmore&quot;];
+for (_i = 0, _len = _ref.length; _i &lt; _len; _i++) {
+  surname = _ref[_i];
+  console.log(&quot;David &quot; + surname);
+}
+</code></pre><p>If you need the current iteration index, you are able to pass an extra argument:</p>
+<p><em>CoffeeScript</em></p>
+<pre><code>for count, i in [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;]
+  console.log &quot;#{i} - #{count}&quot;
+</code></pre><p><em>JavaScript</em></p>
+<pre><code>var i, count, _len, _ref;
+_ref = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;];
+for (i = 0, _len = _ref.length; i &lt; _len; i++) {
+  count = _ref[i];
+  alert(&quot;&quot; + i + &quot; - &quot; + count);
+}
+</code></pre><p>You can also iterate on one line, using the suffix form by placing <code>for</code> at the end of expression</p>
+<p><em>CoffeScript</em></p>
+<pre><code>like guitarist for guitarist in [&quot;Young&quot;, &quot;Gilmour&quot;, &quot;Blackmore&quot;]
+</code></pre><p><em>JavaScript</em></p>
+<pre><code>var guitarist, _i, _len, _ref;
+_ref = [&quot;Young&quot;, &quot;Gilmour&quot;, &quot;Blackmore&quot;];
+for (_i = 0, _len = _ref.length; _i &lt; _len; _i++) {
+  guitarist = _ref[_i];
+  like(guitarist);
+}
+</code></pre><p>And also filtering is available in comprehensions Python style:</p>
+<pre><code>guitarists = [&quot;Young&quot;, &quot;Gilmour&quot;, &quot;Blackmore&quot;]
+like guitarist for guitarist in guitarists when guitarist[0] is &quot;G&quot;
+</code></pre><p>You can also use comprehensions for iterating over properties in objects. Instead of the in keyword, use of.</p>
+<p><em>CoffeeScript</em></p>
+<pre><code>  names = Angus: &quot;Young&quot;, David: &quot;Gilmour&quot;, Richie: &quot;Blackmore&quot;
+  alert(&quot;#{first} #{last}&quot;) for first, last of names
+</code></pre><p><em>JavaScript</em></p>
+<pre><code>  var first, last, names;
+  names = {
+    Angus: &quot;Young&quot;,
+    David: &quot;Gilmour&quot;,
+    Richie: &quot;Blackmore&quot;
+  };
+  for (first in names) {
+    last = names[first];
+    alert(&quot;&quot; + first + &quot; &quot; + last);
+  }
+</code></pre><p>The only low-level loop that CoffeeScript exposes is the <code>while</code> loop. This has similar behavior to the while
+loop in pure JavaScript, but has the added advantage that it returns an array of results, i.e. like
+the Array.prototype.map() function.</p>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../syntax/operators_and_alises.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../&#39;classes/&#39;" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+        <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+        
+    </body>
+</html>
