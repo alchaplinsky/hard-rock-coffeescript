@@ -1,0 +1,10 @@
+# Summary
+* [Installation](installation/index.md)
+* [Syntax](syntax/scoping.md)
+  * [Variables and Scope](syntax/variables.md)
+  * [Functions](syntax/functions.md)
+  * [Flow control](syntax/flow_control.md)
+  * [Arrays and objects](syntax/arrays_and_objects.md)
+  * [Operators and Aliases](syntax/operators_and_alises.md)
+  * [Loops and comprehensions](syntax/loops_and_comprehensions.md)
+* [Classes]('classes/')
