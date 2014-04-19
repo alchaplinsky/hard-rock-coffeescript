@@ -5,11 +5,11 @@ module.exports = (grunt) =>
     gitbook:
       development:
         input: "./"
-        github: "alchapone/hard-rock-coffescript"
-    'gh-pages':
+        github: "alchapone/hard-rock-coffeescript"
+    "gh-pages":
       options:
         base: '_book'
-        src: ['**']
+      src: ['**']
     clean:
       files: '.grunt'
     watch:
