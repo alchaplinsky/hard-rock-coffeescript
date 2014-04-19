@@ -15,6 +15,7 @@
     "grunt-contrib-watch": "0.6.1",
     "grunt-gitbook": "0.2.3",
     "grunt-gh-pages": "0.9.1",
+    "grunt-contrib-less": "~0.5.0",
     "grunt-contrib-clean": "~0.5.0"
   },
   "peerDependencies": {
