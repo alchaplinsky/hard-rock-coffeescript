@@ -1,5 +1,4 @@
-# Hard Rock CoffeScript
-![Hard Rock Coffeescript](/assets/hard_rock.jpg)
+![Hard Rock Coffeescript](assets/hard_rock.jpg)
 CoffeScript is a little language that compiles to JavaScript created by Jeremy Ashkenas. This is and evolution of JavaScript that hides its bad parts and exposes the good parts. It's syntax is inspired by Ruby and Python and brings many features from these two languages.
 
 Why is CoffeeScript better than writing pure JavaScript? First of all coffeescript allows you to actually write less and do more (yep, exactly like jQuery:)). The amount of code that you'll need to write reduces sugnificantly - you're geeting git of curly brackets, semicolons and you are getting lots of syntactic sugar. Moreover it adds usefull features like classes and inheritance which are not yet arrived natively to JavaScript.

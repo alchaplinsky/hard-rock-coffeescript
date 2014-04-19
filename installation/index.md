@@ -2,19 +2,20 @@
 In order to get started with CoffeScript you need to compile it to JavaScript nativly supported by browsers. Here you have couple options:
 
 You can use the browser-based CoffeeScript compiler, by including [compiler script](http://jashkenas.github.io/coffee-script/extras/coffee-script.js) in a page, marking up any CoffeeScript script tags with the correct type like:
-
-    <script src="http://jashkenas.github.com/coffee-script/extras/coffee-script.js" type="text/javascript"></script>
-    <script type="text/coffeescript">
-        # your coffee code
-    </script>
-
+```html
+<script src="http://jashkenas.github.com/coffee-script/extras/coffee-script.js" type="text/javascript"></script>
+<script type="text/coffeescript">
+    # your coffee code
+</script>
+```
 This will compile all your CoffeeScript code to JavaScript at runtime.
 
 There's also a command line version of coffee compiler that is available as Node.js utility. he core compiler however, does not depend on Node, and can be run in any JavaScript environment.
 
 To install, first make sure you have a working copy of the latest stable version of Node.js, and npm (the Node Package Manager). You can then install CoffeeScript with npm:
-
-    npm install -g coffee-script
+```
+npm install -g coffee-script
+```
 
 Once installed, you are able to run coffee command, which can execute scripts, compile ```.coffee``` files into ```.js```, and provide an interactive console, which you can use to quickly execute CoffeeScript statements.
 
