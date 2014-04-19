@@ -8,7 +8,8 @@
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
         <meta name="author" content="alchapone">
-        <meta name="description" content="CoffeScript is a little language that compiles to JavaScript created by Jeremy Ashkenas. This is and evolution of JavaScript that hides its bad parts and exposes the good parts. It&#39;s syntax is inspired by Ruby and Python and brings many features from these two languages.">
+        <meta name="description" content="![Hard Rock Coffeescript](/assets/hard_rock.jpg)
+CoffeScript is a little language that compiles to JavaScript created by Jeremy Ashkenas. This is and evolution of JavaScript that hides its bad parts and exposes the good parts. It&#39;s syntax is inspired by Ruby and Python and brings many features from these two languages.">
         <meta name="keywords" content="gitbook,github" >
         <meta name="generator" content="www.gitbook.io">
 
@@ -39,7 +40,7 @@
         <link rel="stylesheet" href="../gitbook/style.css">
         
         
-    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="2.4" data-basepath=".." data-revision="1397941870813">
+    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="2.4" data-basepath=".." data-revision="1397948563914">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -205,50 +206,58 @@
 <p>Object literals can be specified exactly as in JavaScript, with a pair of braces and key/value statements.
 However, like with function invocation, CoffeeScript makes the braces optional. In fact, you can also use
 indentation and new lines instead of comma separation.</p>
-<pre><code>rockStar = {tallent: &#39;30%&#39;, charisma: &#39;70%&#39;}
+<pre><code class="lang-coffeescript">rockStar = {<span class="hljs-attribute">tallent</span>: <span class="hljs-string">'30%'</span>, <span class="hljs-attribute">charisma</span>: <span class="hljs-string">'70%'</span>}
 
-rockStar = tallent: &#39;30%&#39;, charisma: &#39;70%&#39;
+rockStar = <span class="hljs-attribute">tallent</span>: <span class="hljs-string">'30%'</span>, <span class="hljs-attribute">charisma</span>: <span class="hljs-string">'70%'</span>
 
 rockStar =
-  tallent: &#39;30%&#39;
-  charisma: &#39;70%&#39;
-</code></pre><h2 id="arrays">Arrays</h2>
+  <span class="hljs-attribute">tallent</span>: <span class="hljs-string">'30%'</span>
+  <span class="hljs-attribute">charisma</span>: <span class="hljs-string">'70%'</span>
+</code></pre>
+<h2 id="arrays">Arrays</h2>
 <p>Arrays definitions look pretty similar to object literals - coma separated if defined in a single line and you
 can use whitespace instead of comma separators, although the square brackets <code>[]</code> are still required.</p>
-<pre><code>nirvana = [&#39;Bleach&#39;, &#39;Nevermind&#39;, &#39;Incesticide&#39;, &#39;In Utero&#39;]
+<pre><code class="lang-coffeescript">nirvana = [<span class="hljs-string">'Bleach'</span>, <span class="hljs-string">'Nevermind'</span>, <span class="hljs-string">'Incesticide'</span>, <span class="hljs-string">'In Utero'</span>]
 
 nirvana = [
-  &#39;Bleach&#39;
-  &#39;Nevermind&#39;
-  &#39;Incesticide&#39;
-  &#39;In Utero&#39;
+  <span class="hljs-string">'Bleach'</span>
+  <span class="hljs-string">'Nevermind'</span>
+  <span class="hljs-string">'Incesticide'</span>
+  <span class="hljs-string">'In Utero'</span>
 ]
-</code></pre><p> CoffeeScript also strippes the trailing comma in arrays which is another common source of cross-browser errors.</p>
+</code></pre>
+<p> CoffeeScript also strippes the trailing comma in arrays which is another common source of cross-browser errors.</p>
 <h3 id="ranges">Ranges</h3>
 <p>CoffeeScript takes inspiration from Ruby and provides you an ability to define ranges if you need an array of sequential integers.
 Ranges are created by two numerical values, the first and last positions in the range, separated by <code>..</code> or <code>...</code>.
 With two dots (1..4), the range is inclusive (1, 2, 3, 4); with three dots (1...4), the range excludes the end (1, 2, 3).</p>
 <p><em>CoffeeScript</em></p>
-<pre><code>rangeOne = [1..10]
-rangeTwo = [1...10]
-</code></pre><p><em>JavaScript</em></p>
-<pre><code>var rangeOne, rangeTwo;
-range = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-range = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-</code></pre><p>If, however, the range is specified immediately after a variable, CoffeeScript converts it into a slice() method call.</p>
-<pre><code>numbers = [1, 2, 3, 4][0..1] # =&gt; [1, 2]
-</code></pre><p>In the example above, the range returns a new array, containing only the first two elements of the original array. You can also use the same syntax for replacing an array segment with another array.</p>
-<p><em>CoffeeScript</em></p>
-<pre><code>numbers = [0..9]
-numbers[3..5] = [-3, -4, -5] # =&gt; [0, 1, 2, -3, -4, -5, 6, 7, 8, 9]
-</code></pre><p><em>JavaScript</em></p>
-<pre><code>var numbers, _ref;
-numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-[].splice.apply(numbers, [3, 3].concat(_ref = [-3, -4, -5])), _ref;
-</code></pre><p>What&#39;s neat, is that JavaScript allows you to call slice() on strings too, so you can use ranges with string to return a new subset of characters.</p>
-<p><em>CoffeeScript</em></p>
-<pre><code>lyrics = &quot;So close no matter how far&quot;[0..7] # =&gt; &quot;So close&quot;
+<pre><code class="lang-coffeescript">rangeOne = [<span class="hljs-number">1.</span><span class="hljs-number">.10</span>]
+rangeTwo = [<span class="hljs-number">1.</span>.<span class="hljs-number">.10</span>]
 </code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> rangeOne, rangeTwo;
+range = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>];
+range = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>];
+</code></pre>
+<p>If, however, the range is specified immediately after a variable, CoffeeScript converts it into a slice() method call.</p>
+<pre><code class="lang-coffeescript">numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>][<span class="hljs-number">0.</span><span class="hljs-number">.1</span>] <span class="hljs-comment"># =&gt; [1, 2]</span>
+</code></pre>
+<p>In the example above, the range returns a new array, containing only the first two elements of the original array. You can also use the same syntax for replacing an array segment with another array.</p>
+<p><em>CoffeeScript</em></p>
+<pre><code class="lang-coffeescript">numbers = [<span class="hljs-number">0.</span><span class="hljs-number">.9</span>]
+numbers[<span class="hljs-number">3.</span><span class="hljs-number">.5</span>] = [-<span class="hljs-number">3</span>, -<span class="hljs-number">4</span>, -<span class="hljs-number">5</span>] <span class="hljs-comment"># =&gt; [0, 1, 2, -3, -4, -5, 6, 7, 8, 9]</span>
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> numbers, _ref;
+numbers = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>];
+[].splice.apply(numbers, [<span class="hljs-number">3</span>, <span class="hljs-number">3</span>].concat(_ref = [-<span class="hljs-number">3</span>, -<span class="hljs-number">4</span>, -<span class="hljs-number">5</span>])), _ref;
+</code></pre>
+<p>What&#39;s neat, is that JavaScript allows you to call slice() on strings too, so you can use ranges with string to return a new subset of characters.</p>
+<p><em>CoffeeScript</em></p>
+<pre><code class="lang-coffeescript">lyrics = <span class="hljs-string">"So close no matter how far"</span>[<span class="hljs-number">0.</span><span class="hljs-number">.7</span>] <span class="hljs-comment"># =&gt; "So close"</span>
+</code></pre>
+
                     
                     </section>
                 

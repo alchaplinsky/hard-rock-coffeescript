@@ -8,7 +8,8 @@
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
         <meta name="author" content="alchapone">
-        <meta name="description" content="CoffeScript is a little language that compiles to JavaScript created by Jeremy Ashkenas. This is and evolution of JavaScript that hides its bad parts and exposes the good parts. It&#39;s syntax is inspired by Ruby and Python and brings many features from these two languages.">
+        <meta name="description" content="![Hard Rock Coffeescript](/assets/hard_rock.jpg)
+CoffeScript is a little language that compiles to JavaScript created by Jeremy Ashkenas. This is and evolution of JavaScript that hides its bad parts and exposes the good parts. It&#39;s syntax is inspired by Ruby and Python and brings many features from these two languages.">
         <meta name="keywords" content="gitbook,github" >
         <meta name="generator" content="www.gitbook.io">
 
@@ -39,7 +40,7 @@
         <link rel="stylesheet" href="../gitbook/style.css">
         
         
-    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="2.5" data-basepath=".." data-revision="1397941870813">
+    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="2.5" data-basepath=".." data-revision="1397948563914">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -204,31 +205,37 @@
                         <h2 id="operators-and-aliases">Operators and aliases</h2>
 <p>CoffeeScript includes some useful aliases to provide you with shorthands. First one is <code>@</code>, which is an alias for <code>this</code> keyword in JavaScript.</p>
 <p><em>CoffeeScript</em></p>
-<pre><code>goByGuitar = -&gt;
-  @guitar = true
-</code></pre><p><em>JavaScript</em></p>
-<pre><code>var goByGuitar;
-goByGuitar = function() {
-  return this.guitar = true;
+<pre><code class="lang-coffeescript"><span class="hljs-function"><span class="hljs-title">goByGuitar</span> = -&gt;</span>
+  <span class="hljs-property">@guitar</span> = <span class="hljs-literal">true</span>
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> goByGuitar;
+goByGuitar = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.guitar = <span class="hljs-literal">true</span>;
 };
-</code></pre><p>Another useful alias shortens your expression is ::, which is an alias for prototype.</p>
+</code></pre>
+<p>Another useful alias shortens your expression is ::, which is an alias for prototype.</p>
 <p><em>CoffeeScript</em></p>
-<pre><code>Band::members = -&gt; @members.length
-</code></pre><p><em>JavaScript</em></p>
-<pre><code>Band.prototype.members = function() {
-  return this.members.length;
+<pre><code class="lang-coffeescript"><span class="hljs-attribute">Band</span>::<span class="hljs-function"><span class="hljs-title">members</span> = -&gt;</span> <span class="hljs-property">@members</span>.length
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript">Band.prototype.members = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.members.length;
 };
-</code></pre><p>Because the <code>==</code> operator frequently causes undesirable coercion, is intransitive, and has a different meaning than in other languages, CoffeeScript compiles <code>==</code> into <code>===</code>, and <code>!=</code> into  <code>!==</code>.</p>
+</code></pre>
+<p>Because the <code>==</code> operator frequently causes undesirable coercion, is intransitive, and has a different meaning than in other languages, CoffeeScript compiles <code>==</code> into <code>===</code>, and <code>!=</code> into  <code>!==</code>.</p>
 <p>CoffeeScript also provides some human readable aliases for this operators: you can use <code>is</code> instead of <code>==</code> and <code>isnt</code> instead of <code>!=</code>. And also you can use <code>not</code> as an alias for <code>!</code>.</p>
 <p><em>CoffeeScript</em></p>
-<pre><code>&#39;life&#39; is &#39;life&#39; # true
-&#39;iron man&#39; isnt &#39;sandman&#39; # true
-true is not false # true
-</code></pre><p><em>JavaScript</em></p>
-<pre><code>&#39;life&#39; === &#39;life&#39;;
-&#39;iron man&#39; !== &#39;sandman&#39;;
-true === !false;
-</code></pre><p>Logical operators aliases are pretty straightforward - <code>and</code> compiles to <code>&amp;&amp;</code>, and <code>or</code> into <code>||</code>.
+<pre><code class="lang-coffeescript"><span class="hljs-string">'life'</span> <span class="hljs-keyword">is</span> <span class="hljs-string">'life'</span> <span class="hljs-comment"># true</span>
+<span class="hljs-string">'iron man'</span> <span class="hljs-keyword">isnt</span> <span class="hljs-string">'sandman'</span> <span class="hljs-comment"># true</span>
+<span class="hljs-literal">true</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">false</span> <span class="hljs-comment"># true</span>
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-string">'life'</span> === <span class="hljs-string">'life'</span>;
+<span class="hljs-string">'iron man'</span> !== <span class="hljs-string">'sandman'</span>;
+<span class="hljs-literal">true</span> === !<span class="hljs-literal">false</span>;
+</code></pre>
+<p>Logical operators aliases are pretty straightforward - <code>and</code> compiles to <code>&amp;&amp;</code>, and <code>or</code> into <code>||</code>.
 You can also use <code>in</code> to test for array presence, and <code>of</code> to test for JavaScript object-key presence.</p>
 <h2 id="the-existential-operator">The Existential Operator</h2>
 <p>It&#39;s a little difficult to check for the existence of a variable in JavaScript. <code>if (variable) ...</code>
@@ -236,39 +243,47 @@ comes close, but fails for zero, the empty string, and <code>false</code>.</p>
 <h3 id="existence">Existence</h3>
 <p>CoffeeScript&#39;s existential operator <code>?</code> returns <code>true</code> unless a variable is <code>null</code> or <code>undefined</code>, which makes it analogous to Ruby&#39;s <code>nil?</code></p>
 <p>Behind the scens CoffeeScript will check previously defined variables like this:</p>
-<pre><code>variable != null;
-</code></pre><p>and if variable haven&#39;t been defined previously like this:</p>
-<pre><code>typeof variable !== &quot;undefined&quot; &amp;&amp; variable !== null;
-</code></pre><h3 id="conditional-assignment">Conditional assignment</h3>
+<pre><code class="lang-javascript">variable != <span class="hljs-literal">null</span>;
+</code></pre>
+<p>and if variable haven&#39;t been defined previously like this:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">typeof</span> variable !== <span class="hljs-string">"undefined"</span> &amp;&amp; variable !== <span class="hljs-literal">null</span>;
+</code></pre>
+<h3 id="conditional-assignment">Conditional assignment</h3>
 <p>It can also be used for safer conditional assignment than <code>||=</code> provides, for cases where you may be handling numbers or strings.</p>
-<pre><code>band = null
-band ?= &#39;Stone Sour&#39;
-</code></pre><h3 id="or-operator">Or operator</h3>
+<pre><code class="lang-coffeescript">band = <span class="hljs-literal">null</span>
+band ?= <span class="hljs-string">'Stone Sour'</span>
+</code></pre>
+<h3 id="or-operator">Or operator</h3>
 <p>You can also use it in place of the <code>||</code> operator:</p>
-<pre><code>band = missingName ? &#39;Halloween&#39;
-</code></pre><h3 id="null-check">Null check</h3>
+<pre><code class="lang-coffeescript">band = missingName ? <span class="hljs-string">'Halloween'</span>
+</code></pre>
+<h3 id="null-check">Null check</h3>
 <p>You can skip a null check before accessing a property by placing the existential operator right before it.
 Use <code>?.</code> instead of the dot accessor <code>.</code> in cases where the base value may be <code>null</code> or <code>undefined</code>.
 If all of the properties exist then you&#39;ll get the expected result, if the chain is broken, <code>undefined</code> is
 returned instead of the TypeError that would be raised otherwise.</p>
 <p><em>CoffeeScript</em></p>
-<pre><code>singer.playTheGuitar()?.solo()
-</code></pre><p><em>JavaScript</em></p>
-<pre><code>var _ref;
-if ((_ref = singer.playTheGuitar()) != null) {
+<pre><code class="lang-coffeescript">singer.playTheGuitar()?.solo()
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> _ref;
+<span class="hljs-keyword">if</span> ((_ref = singer.playTheGuitar()) != <span class="hljs-literal">null</span>) {
   _ref.solo();
 }
-</code></pre><h3 id="callable-check">Callable check</h3>
+</code></pre>
+<h3 id="callable-check">Callable check</h3>
 <p>Similarly you can check that a property is actually a function, and callable, by placing the existential
 operator right before the parens. If the property doesn&#39;t exist, or isn&#39;t a function, it simply won&#39;t get called.</p>
 <p><em>CoffeeScript</em></p>
-<pre><code>guitarist.sing().chorus?()
-</code></pre><p><em>JavaScript</em></p>
-<pre><code>var _base;
-if (typeof (_base = guitarist.sing()).chorus === &quot;function&quot;) {
+<pre><code class="lang-coffeescript">guitarist.sing().chorus?()
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> _base;
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> (_base = guitarist.sing()).chorus === <span class="hljs-string">"function"</span>) {
   _base.chorus();
 }
 </code></pre>
+
                     
                     </section>
                 

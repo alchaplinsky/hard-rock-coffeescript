@@ -8,7 +8,8 @@
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
         <meta name="author" content="alchapone">
-        <meta name="description" content="CoffeScript is a little language that compiles to JavaScript created by Jeremy Ashkenas. This is and evolution of JavaScript that hides its bad parts and exposes the good parts. It&#39;s syntax is inspired by Ruby and Python and brings many features from these two languages.">
+        <meta name="description" content="![Hard Rock Coffeescript](/assets/hard_rock.jpg)
+CoffeScript is a little language that compiles to JavaScript created by Jeremy Ashkenas. This is and evolution of JavaScript that hides its bad parts and exposes the good parts. It&#39;s syntax is inspired by Ruby and Python and brings many features from these two languages.">
         <meta name="keywords" content="gitbook,github" >
         <meta name="generator" content="www.gitbook.io">
 
@@ -39,7 +40,7 @@
         <link rel="stylesheet" href="../gitbook/style.css">
         
         
-    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="2.3" data-basepath=".." data-revision="1397941870813">
+    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="2.3" data-basepath=".." data-revision="1397948563914">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -204,60 +205,71 @@
                         <h2 id="flow-control">Flow control</h2>
 <p>The convention of optional parentheses continues with CoffeeScript&#39;s if and else keywords.</p>
 <p><em>CoffeeScript</em></p>
-<pre><code>if true == true
-  &quot;Rock&#39;n&#39;Roll&quot;
+<pre><code class="lang-coffeescript"><span class="hljs-keyword">if</span> <span class="hljs-literal">true</span> == <span class="hljs-literal">true</span>
+  <span class="hljs-string">"Rock'n'Roll"</span>
 
-if true != true then &quot;Let it be&quot;
+<span class="hljs-keyword">if</span> <span class="hljs-literal">true</span> != <span class="hljs-literal">true</span> <span class="hljs-keyword">then</span> <span class="hljs-string">"Let it be"</span>
 
-if 1 &gt; 0 then &quot;Ok&quot; else &quot;Y2K!&quot;
-</code></pre><p><em>JavaScript</em></p>
-<pre><code>if (true === true) {
-  &quot;Rock&#39;n&#39;Roll&quot;;
+<span class="hljs-keyword">if</span> <span class="hljs-number">1</span> &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">then</span> <span class="hljs-string">"Ok"</span> <span class="hljs-keyword">else</span> <span class="hljs-string">"Y2K!"</span>
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span> === <span class="hljs-literal">true</span>) {
+  <span class="hljs-string">"Rock'n'Roll"</span>;
 }
-if (true !== true) {
-  &quot;Let it be&quot;;
+<span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span> !== <span class="hljs-literal">true</span>) {
+  <span class="hljs-string">"Let it be"</span>;
 }
-if (1 &gt; 0) {
-  &quot;Ok&quot;;
-} else {
-  &quot;Y2K!&quot;;
+<span class="hljs-keyword">if</span> (<span class="hljs-number">1</span> &gt; <span class="hljs-number">0</span>) {
+  <span class="hljs-string">"Ok"</span>;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-string">"Y2K!"</span>;
 }
-</code></pre><p>As you can see above, if the if statement is on one line, you&#39;ll need to use the then keyword, so CoffeeScript knows when the block begins. Conditional operators (?:) are not supported, instead you should use a single line if/else statement.</p>
+</code></pre>
+<p>As you can see above, if the if statement is on one line, you&#39;ll need to use the then keyword, so CoffeeScript knows when the block begins. Conditional operators (?:) are not supported, instead you should use a single line if/else statement.</p>
 <p>CoffeeScript also includes a Ruby idiom of allowing suffixed if statements.</p>
 <p><em>CoffeeScript</em></p>
-<pre><code>alert &quot;It&#39;s cold!&quot; if heat &lt; 5
-</code></pre><p><em>JavaScript</em></p>
-<pre><code>if (heat &lt; 5) {
-  alert(&quot;It&#39;s cold!&quot;);
+<pre><code class="lang-coffeescript">alert <span class="hljs-string">"It's cold!"</span> <span class="hljs-keyword">if</span> heat &lt; <span class="hljs-number">5</span>
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (heat &lt; <span class="hljs-number">5</span>) {
+  alert(<span class="hljs-string">"It's cold!"</span>);
 }
-</code></pre><p>Instead of using the exclamation mark (!) for negation, you can also use the not keyword - which can sometimes make your code more readable as exclamation marks can be easy to miss.</p>
+</code></pre>
+<p>Instead of using the exclamation mark (!) for negation, you can also use the not keyword - which can sometimes make your code more readable as exclamation marks can be easy to miss.</p>
 <p><em>CoffeeScript</em></p>
-<pre><code>if not true then &quot;Rock&#39;n&#39;Roll&quot;
-</code></pre><p><em>JavaScript</em></p>
-<pre><code>if (!true) {
-  &quot;Rock&#39;n&#39;Roll&quot;;
+<pre><code class="lang-coffeescript"><span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">true</span> <span class="hljs-keyword">then</span> <span class="hljs-string">"Rock'n'Roll"</span>
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (!<span class="hljs-literal">true</span>) {
+  <span class="hljs-string">"Rock'n'Roll"</span>;
 }
-</code></pre><p>In the example above, we could also use the CoffeeScript&#39;s unless statement, the opposite of if.</p>
+</code></pre>
+<p>In the example above, we could also use the CoffeeScript&#39;s unless statement, the opposite of if.</p>
 <p><em>CoffeeScript</em></p>
-<pre><code>unless true
-  &quot;Rock&#39;n&#39;Roll&quot;
-</code></pre><p><em>JavaScript</em></p>
-<pre><code>if (!true) {
-  &quot;Rock&#39;n&#39;Roll&quot;;
+<pre><code class="lang-coffeescript"><span class="hljs-keyword">unless</span> <span class="hljs-literal">true</span>
+  <span class="hljs-string">"Rock'n'Roll"</span>
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (!<span class="hljs-literal">true</span>) {
+  <span class="hljs-string">"Rock'n'Roll"</span>;
 }
-</code></pre><p>In a similar fashion to not, CoffeeScript also introduces the is statement, which translates to ===.</p>
+</code></pre>
+<p>In a similar fashion to not, CoffeeScript also introduces the is statement, which translates to ===.</p>
 <p><em>CoffeeScript</em></p>
-<pre><code>if true is 1
-  &quot;Type coercion fail!&quot;
-</code></pre><p><em>JavaScript</em></p>
-<pre><code>if (true === 1) {
-  &quot;Type coercion fail!&quot;;
+<pre><code class="lang-coffeescript"><span class="hljs-keyword">if</span> <span class="hljs-literal">true</span> <span class="hljs-keyword">is</span> <span class="hljs-number">1</span>
+  <span class="hljs-string">"Type coercion fail!"</span>
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span> === <span class="hljs-number">1</span>) {
+  <span class="hljs-string">"Type coercion fail!"</span>;
 }
-</code></pre><p>As an alternative to is not, you can use isnt.</p>
+</code></pre>
+<p>As an alternative to is not, you can use isnt.</p>
 <p><em>CoffeeScript</em></p>
-<pre><code>if true isnt true
-  alert &quot;Try to rock as hard as you can!&quot;
-</code></pre><p>You may have noticed in the examples above, that CoffeeScript is converting <code>==</code> operators into <code>===</code> and <code>!=</code> into <code>!==</code>. This is one of my favorite features to the language, and yet one of the most simple. What&#39;s the reasoning behind this? Well frankly JavaScript&#39;s type coercion is a bit odd, and its equality operator coerces types in order to compare them, leading to some confusing behaviors and the source of many bugs.</p>
+<pre><code class="lang-coffeescript"><span class="hljs-keyword">if</span> <span class="hljs-literal">true</span> <span class="hljs-keyword">isnt</span> <span class="hljs-literal">true</span>
+  alert <span class="hljs-string">"Try to rock as hard as you can!"</span>
+</code></pre>
+<p>You may have noticed in the examples above, that CoffeeScript is converting <code>==</code> operators into <code>===</code> and <code>!=</code> into <code>!==</code>. This is one of my favorite features to the language, and yet one of the most simple. What&#39;s the reasoning behind this? Well frankly JavaScript&#39;s type coercion is a bit odd, and its equality operator coerces types in order to compare them, leading to some confusing behaviors and the source of many bugs.</p>
 
                     
                     </section>

@@ -8,7 +8,8 @@
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
         <meta name="author" content="alchapone">
-        <meta name="description" content="CoffeScript is a little language that compiles to JavaScript created by Jeremy Ashkenas. This is and evolution of JavaScript that hides its bad parts and exposes the good parts. It&#39;s syntax is inspired by Ruby and Python and brings many features from these two languages.">
+        <meta name="description" content="![Hard Rock Coffeescript](/assets/hard_rock.jpg)
+CoffeScript is a little language that compiles to JavaScript created by Jeremy Ashkenas. This is and evolution of JavaScript that hides its bad parts and exposes the good parts. It&#39;s syntax is inspired by Ruby and Python and brings many features from these two languages.">
         <meta name="keywords" content="gitbook,github" >
         <meta name="generator" content="www.gitbook.io">
 
@@ -39,7 +40,7 @@
         <link rel="stylesheet" href="../gitbook/style.css">
         
         
-    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="2.6" data-basepath=".." data-revision="1397941870813">
+    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="2.6" data-basepath=".." data-revision="1397948563914">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -207,55 +208,64 @@ rather than a modern object orientated one. The introduction of ES5 improved tha
 with the forEach() function, but that still requires a function call every iteration and is therefore
 much slower. Again, CoffeeScript comes to the rescue, with a beautiful syntax:</p>
 <p><em>CoffeeScript</em></p>
-<pre><code>for surname in [&quot;Young&quot;, &quot;Gilmour&quot;, &quot;Blackmore&quot;]
-  console.log &quot;David #{surname}&quot;
-</code></pre><p><em>JavaScript</em></p>
-<pre><code>var surname, _i, _len, _ref;
-_ref = [&quot;Young&quot;, &quot;Gilmour&quot;, &quot;Blackmore&quot;];
-for (_i = 0, _len = _ref.length; _i &lt; _len; _i++) {
+<pre><code class="lang-coffeescript"><span class="hljs-keyword">for</span> surname <span class="hljs-keyword">in</span> [<span class="hljs-string">"Young"</span>, <span class="hljs-string">"Gilmour"</span>, <span class="hljs-string">"Blackmore"</span>]
+  <span class="hljs-built_in">console</span>.log <span class="hljs-string">"David <span class="hljs-subst">#{surname}</span>"</span>
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> surname, _i, _len, _ref;
+_ref = [<span class="hljs-string">"Young"</span>, <span class="hljs-string">"Gilmour"</span>, <span class="hljs-string">"Blackmore"</span>];
+<span class="hljs-keyword">for</span> (_i = <span class="hljs-number">0</span>, _len = _ref.length; _i &lt; _len; _i++) {
   surname = _ref[_i];
-  console.log(&quot;David &quot; + surname);
+  console.log(<span class="hljs-string">"David "</span> + surname);
 }
-</code></pre><p>If you need the current iteration index, you are able to pass an extra argument:</p>
+</code></pre>
+<p>If you need the current iteration index, you are able to pass an extra argument:</p>
 <p><em>CoffeeScript</em></p>
-<pre><code>for count, i in [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;]
-  console.log &quot;#{i} - #{count}&quot;
-</code></pre><p><em>JavaScript</em></p>
-<pre><code>var i, count, _len, _ref;
-_ref = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;];
-for (i = 0, _len = _ref.length; i &lt; _len; i++) {
+<pre><code class="lang-coffeescript"><span class="hljs-keyword">for</span> count, i <span class="hljs-keyword">in</span> [<span class="hljs-string">"one"</span>, <span class="hljs-string">"two"</span>, <span class="hljs-string">"three"</span>]
+  <span class="hljs-built_in">console</span>.log <span class="hljs-string">"<span class="hljs-subst">#{i}</span> - <span class="hljs-subst">#{count}</span>"</span>
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> i, count, _len, _ref;
+_ref = [<span class="hljs-string">"one"</span>, <span class="hljs-string">"two"</span>, <span class="hljs-string">"three"</span>];
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>, _len = _ref.length; i &lt; _len; i++) {
   count = _ref[i];
-  alert(&quot;&quot; + i + &quot; - &quot; + count);
+  alert(<span class="hljs-string">""</span> + i + <span class="hljs-string">" - "</span> + count);
 }
-</code></pre><p>You can also iterate on one line, using the suffix form by placing <code>for</code> at the end of expression</p>
+</code></pre>
+<p>You can also iterate on one line, using the suffix form by placing <code>for</code> at the end of expression</p>
 <p><em>CoffeScript</em></p>
-<pre><code>like guitarist for guitarist in [&quot;Young&quot;, &quot;Gilmour&quot;, &quot;Blackmore&quot;]
-</code></pre><p><em>JavaScript</em></p>
-<pre><code>var guitarist, _i, _len, _ref;
-_ref = [&quot;Young&quot;, &quot;Gilmour&quot;, &quot;Blackmore&quot;];
-for (_i = 0, _len = _ref.length; _i &lt; _len; _i++) {
+<pre><code class="lang-coffeescript">like guitarist <span class="hljs-keyword">for</span> guitarist <span class="hljs-keyword">in</span> [<span class="hljs-string">"Young"</span>, <span class="hljs-string">"Gilmour"</span>, <span class="hljs-string">"Blackmore"</span>]
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> guitarist, _i, _len, _ref;
+_ref = [<span class="hljs-string">"Young"</span>, <span class="hljs-string">"Gilmour"</span>, <span class="hljs-string">"Blackmore"</span>];
+<span class="hljs-keyword">for</span> (_i = <span class="hljs-number">0</span>, _len = _ref.length; _i &lt; _len; _i++) {
   guitarist = _ref[_i];
   like(guitarist);
 }
-</code></pre><p>And also filtering is available in comprehensions Python style:</p>
-<pre><code>guitarists = [&quot;Young&quot;, &quot;Gilmour&quot;, &quot;Blackmore&quot;]
-like guitarist for guitarist in guitarists when guitarist[0] is &quot;G&quot;
-</code></pre><p>You can also use comprehensions for iterating over properties in objects. Instead of the in keyword, use of.</p>
+</code></pre>
+<p>And also filtering is available in comprehensions Python style:</p>
+<pre><code class="lang-coffeescript">guitarists = [<span class="hljs-string">"Young"</span>, <span class="hljs-string">"Gilmour"</span>, <span class="hljs-string">"Blackmore"</span>]
+like guitarist <span class="hljs-keyword">for</span> guitarist <span class="hljs-keyword">in</span> guitarists <span class="hljs-keyword">when</span> guitarist[<span class="hljs-number">0</span>] <span class="hljs-keyword">is</span> <span class="hljs-string">"G"</span>
+</code></pre>
+<p>You can also use comprehensions for iterating over properties in objects. Instead of the in keyword, use of.</p>
 <p><em>CoffeeScript</em></p>
-<pre><code>  names = Angus: &quot;Young&quot;, David: &quot;Gilmour&quot;, Richie: &quot;Blackmore&quot;
-  alert(&quot;#{first} #{last}&quot;) for first, last of names
-</code></pre><p><em>JavaScript</em></p>
-<pre><code>  var first, last, names;
-  names = {
-    Angus: &quot;Young&quot;,
-    David: &quot;Gilmour&quot;,
-    Richie: &quot;Blackmore&quot;
-  };
-  for (first in names) {
-    last = names[first];
-    alert(&quot;&quot; + first + &quot; &quot; + last);
-  }
-</code></pre><p>The only low-level loop that CoffeeScript exposes is the <code>while</code> loop. This has similar behavior to the while
+<pre><code class="lang-coffeescript">names = <span class="hljs-attribute">Angus</span>: <span class="hljs-string">"Young"</span>, <span class="hljs-attribute">David</span>: <span class="hljs-string">"Gilmour"</span>, <span class="hljs-attribute">Richie</span>: <span class="hljs-string">"Blackmore"</span>
+alert(<span class="hljs-string">"<span class="hljs-subst">#{first}</span> <span class="hljs-subst">#{last}</span>"</span>) <span class="hljs-keyword">for</span> first, last <span class="hljs-keyword">of</span> names
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> first, last, names;
+names = {
+  Angus: <span class="hljs-string">"Young"</span>,
+  David: <span class="hljs-string">"Gilmour"</span>,
+  Richie: <span class="hljs-string">"Blackmore"</span>
+};
+<span class="hljs-keyword">for</span> (first <span class="hljs-keyword">in</span> names) {
+  last = names[first];
+  alert(<span class="hljs-string">""</span> + first + <span class="hljs-string">" "</span> + last);
+}
+</code></pre>
+<p>The only low-level loop that CoffeeScript exposes is the <code>while</code> loop. This has similar behavior to the while
 loop in pure JavaScript, but has the added advantage that it returns an array of results, i.e. like
 the Array.prototype.map() function.</p>
 

@@ -8,7 +8,8 @@
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
         <meta name="author" content="alchapone">
-        <meta name="description" content="CoffeScript is a little language that compiles to JavaScript created by Jeremy Ashkenas. This is and evolution of JavaScript that hides its bad parts and exposes the good parts. It&#39;s syntax is inspired by Ruby and Python and brings many features from these two languages.">
+        <meta name="description" content="![Hard Rock Coffeescript](/assets/hard_rock.jpg)
+CoffeScript is a little language that compiles to JavaScript created by Jeremy Ashkenas. This is and evolution of JavaScript that hides its bad parts and exposes the good parts. It&#39;s syntax is inspired by Ruby and Python and brings many features from these two languages.">
         <meta name="keywords" content="gitbook,github" >
         <meta name="generator" content="www.gitbook.io">
 
@@ -39,7 +40,7 @@
         <link rel="stylesheet" href="../gitbook/style.css">
         
         
-    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="2.1" data-basepath=".." data-revision="1397941870813">
+    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="2.1" data-basepath=".." data-revision="1397948563914">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -207,36 +208,48 @@ it&#39;s all too easy to accidentally declare a global variable by forgetting to
 CoffeeScript solves this by simply removing global variables. Behind the scenes, CoffeeScript wraps up scripts with an
 anonymous function, keeping the local context, and automatically prefixes all variable assignments with var.
 For example, take this simple variable assignment in CoffeeScript:</p>
-<pre><code>person = &quot;Jimmy Hendrix&quot;
-</code></pre><p>compiles to:</p>
-<pre><code>var person;
-person = &quot;Jimmy Hendrix&quot;;
-</code></pre><p>As you can see, the variable assignment is kept completely local, it&#39;s impossible to accidentally create a global variable. CoffeeScript actually takes this a step further, and makes it difficult to shadow a higher-level variable. This goes a great deal to prevent some of the most common mistakes developers make in JavaScript.</p>
+<p><em>CoffeeScript</em></p>
+<pre><code class="lang-coffeescript">person = <span class="hljs-string">"Jimmy Hendrix"</span>
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> person;
+person = <span class="hljs-string">"Jimmy Hendrix"</span>;
+</code></pre>
+<p>As you can see, the variable assignment is kept completely local, it&#39;s impossible to accidentally create a global variable. CoffeeScript actually takes this a step further, and makes it difficult to shadow a higher-level variable. This goes a great deal to prevent some of the most common mistakes developers make in JavaScript.</p>
 <p>However, sometimes it&#39;s useful to create global variables. You can either do this by directly setting them as properties on the global object (window in browsers), or with the following pattern:</p>
-<pre><code>exports = this
-exports.band = &quot;Led Zeppelin&quot;
-</code></pre><p>compiles to:</p>
-<pre><code>var exports;
-exports = this;
-exports.band = &quot;Led Zeppelin&quot;;
-</code></pre><p>In the root context, this is equal to the global object, and by creating a local exports variable you&#39;re making it really obvious to anyone reading your code exactly which global variables a script is creating. Additionally, it paves the way for CommonJS modules, which we&#39;re going to cover later in the book.</p>
+<p><em>CoffeeScript</em></p>
+<pre><code class="lang-coffeescript"><span class="hljs-built_in">exports</span> = <span class="hljs-keyword">this</span>
+<span class="hljs-built_in">exports</span>.band = <span class="hljs-string">"Led Zeppelin"</span>
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> exports;
+exports = <span class="hljs-keyword">this</span>;
+exports.band = <span class="hljs-string">"Led Zeppelin"</span>;
+</code></pre>
+<p>In the root context, this is equal to the global object, and by creating a local exports variable you&#39;re making it really obvious to anyone reading your code exactly which global variables a script is creating. Additionally, it paves the way for CommonJS modules, which we&#39;re going to cover later in the book.</p>
 <h2 id="string-interpolation">String interpolation</h2>
 <p>CoffeeScript brings Ruby style string interpolation to JavaScript. Double quotes strings can contain #{} tags, which contain expressions to be interpolated into the string.</p>
-<pre><code>band = &#39;Metallica&#39;
-dialog = &quot;- What is your favorite band? - {band}!&quot;
-</code></pre><p>compiles to:</p>
-<pre><code>var band, dialog;
-band = &#39;Metallica&#39;;
-dialog = &quot;- What is your favorite band? - &quot;+band+&quot;!&quot;;
-</code></pre><p>As you can see in the example above, multiline strings are also allowed, without having to prefix each line with a +:</p>
+<p><em>CoffeeScript</em></p>
+<pre><code class="lang-coffeescript">band = <span class="hljs-string">'Metallica'</span>
+dialog = <span class="hljs-string">"- What is your favorite band? - {band}!"</span>
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> band, dialog;
+band = <span class="hljs-string">'Metallica'</span>;
+dialog = <span class="hljs-string">"- What is your favorite band? - "</span>+band+<span class="hljs-string">"!"</span>;
+</code></pre>
+<p>As you can see in the example above, multiline strings are also allowed, without having to prefix each line with a +:</p>
 <h2 id="comments">Comments</h2>
 <p>Comments are in the same format as Ruby comments, starting with a hash character.</p>
-<pre><code># Commented line of code
-</code></pre><p>Multiline comments are also supported, and are brought forward to the generated JavaScript. They&#39;re enclosed by three hash characters.</p>
-<pre><code>###
-  Commented block of code
-###
+<pre><code class="lang-coffeescript"><span class="hljs-comment"># Commented line of code</span>
 </code></pre>
+<p>Multiline comments are also supported, and are brought forward to the generated JavaScript. They&#39;re enclosed by three hash characters.</p>
+<pre><code class="lang-coffeescript"><span class="hljs-comment">###
+  Commented block of code
+###</span>
+`<span class="javascript"></span>
+</code></pre>
+
                     
                     </section>
                 

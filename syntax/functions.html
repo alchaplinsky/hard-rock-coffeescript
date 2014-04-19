@@ -8,7 +8,8 @@
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
         <meta name="author" content="alchapone">
-        <meta name="description" content="CoffeScript is a little language that compiles to JavaScript created by Jeremy Ashkenas. This is and evolution of JavaScript that hides its bad parts and exposes the good parts. It&#39;s syntax is inspired by Ruby and Python and brings many features from these two languages.">
+        <meta name="description" content="![Hard Rock Coffeescript](/assets/hard_rock.jpg)
+CoffeScript is a little language that compiles to JavaScript created by Jeremy Ashkenas. This is and evolution of JavaScript that hides its bad parts and exposes the good parts. It&#39;s syntax is inspired by Ruby and Python and brings many features from these two languages.">
         <meta name="keywords" content="gitbook,github" >
         <meta name="generator" content="www.gitbook.io">
 
@@ -39,7 +40,7 @@
         <link rel="stylesheet" href="../gitbook/style.css">
         
         
-    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="2.2" data-basepath=".." data-revision="1397941870813">
+    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="2.2" data-basepath=".." data-revision="1397948563914">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -207,84 +208,97 @@ Functions can be one liners or indented on multiple lines. The last expression i
 In other words, you don&#39;t need to use the return statement unless you want to return earlier inside the function.</p>
 <p>With that in mind, let&#39;s take a look at an example:</p>
 <p><em>CoffeScript</em>:</p>
-<pre><code>func = -&gt; &quot;bar&quot;
-</code></pre><p><em>JavaScript</em>:</p>
-<pre><code>var func;
-func = function() {
-  return &quot;bar&quot;;
+<pre><code class="lang-coffeescript"><span class="hljs-function"><span class="hljs-title">func</span> = -&gt;</span> <span class="hljs-string">"bar"</span>
+</code></pre>
+<p><em>JavaScript</em>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> func;
+func = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-string">"bar"</span>;
 };
-</code></pre><p>You can see in the resultant compilation, the -&gt; is turned into a function statement, and the &quot;bar&quot; string is automatically returned.</p>
+</code></pre>
+<p>You can see in the resultant compilation, the -&gt; is turned into a function statement, and the &quot;bar&quot; string is automatically returned.</p>
 <p>As mentioned earlier, there&#39;s no reason why we can&#39;t use multiple lines, as long as we indent the function body properly.</p>
 <p><em>CoffeScript</em>:</p>
-<pre><code>func = -&gt;
-  # An extra line
-  &quot;bar&quot;
-</code></pre><p><em>JavaScript</em>:</p>
-<pre><code>var func;
-func = function() {
-  return &quot;bar&quot;;
+<pre><code class="lang-coffeescript"><span class="hljs-function"><span class="hljs-title">func</span> = -&gt;</span>
+  <span class="hljs-comment"># An extra line</span>
+  <span class="hljs-string">"bar"</span>
+</code></pre>
+<p><em>JavaScript</em>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> func;
+func = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-string">"bar"</span>;
 };
-</code></pre><h2 id="function-arguments">Function arguments</h2>
+</code></pre>
+<h2 id="function-arguments">Function arguments</h2>
 <p>What about passing arguments to a function? Well, CoffeeScript allows you do that by specifying arguments
 in parentheses before the arrow.</p>
 <p><em>CoffeScript</em>:</p>
-<pre><code>times = (a, b) -&gt; a * b
-</code></pre><p><em>JavaScript</em>:</p>
-<pre><code>var times;
-times = function(a, b) {
-  return a * b;
+<pre><code class="lang-coffeescript"><span class="hljs-function"><span class="hljs-title">times</span> = <span class="hljs-params">(a, b)</span> -&gt;</span> a * b
+</code></pre>
+<p><em>JavaScript</em>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> times;
+times = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a, b)</span> {</span>
+  <span class="hljs-keyword">return</span> a * b;
 };
-</code></pre><p>CoffeeScript supports default arguments too, for example:</p>
+</code></pre>
+<p>CoffeeScript supports default arguments too, for example:</p>
 <p><em>CoffeScript</em>:</p>
-<pre><code>times = (a = 1, b = 2) -&gt; a * b
-</code></pre><p><em>JavaScript</em>:</p>
-<pre><code>var times;
-times = function(a, b) {
-  if (a == null) {
-    a = 1;
+<pre><code class="lang-coffeescript"><span class="hljs-function"><span class="hljs-title">times</span> = <span class="hljs-params">(a = <span class="hljs-number">1</span>, b = <span class="hljs-number">2</span>)</span> -&gt;</span> a * b
+</code></pre>
+<p><em>JavaScript</em>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> times;
+times = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a, b)</span> {</span>
+  <span class="hljs-keyword">if</span> (a == <span class="hljs-literal">null</span>) {
+    a = <span class="hljs-number">1</span>;
   }
-  if (b == null) {
-    b = 2;
+  <span class="hljs-keyword">if</span> (b == <span class="hljs-literal">null</span>) {
+    b = <span class="hljs-number">2</span>;
   }
-  return a * b;
+  <span class="hljs-keyword">return</span> a * b;
 };
-</code></pre><h2 id="function-invocation">Function invocation</h2>
+</code></pre>
+<h2 id="function-invocation">Function invocation</h2>
 <p>Functions can be invoked exactly as in JavaScript, with parens (), apply() or call(). However, like Ruby, CoffeeScript will automatically call functions if they are invoked with at least one argument.</p>
 <p><em>CoffeScript</em>:</p>
-<pre><code>name = &#39;Hard Rock&#39;
+<pre><code class="lang-coffeescript">name = <span class="hljs-string">'Hard Rock'</span>
 
 alert name
-# Equivalent to:
+<span class="hljs-comment"># Equivalent to:</span>
 alert(name)
 
 alert inspect a
-# Equivalent to:
+<span class="hljs-comment"># Equivalent to:</span>
 alert(inspect(a))
-</code></pre><p><em>JavaScript</em>:</p>
-<pre><code>var name;
-name = &#39;Hard Rock&#39;;
+</code></pre>
+<p><em>JavaScript</em>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> name;
+name = <span class="hljs-string">'Hard Rock'</span>;
 alert(name);
 alert(name);
 alert(inspect(name));
 alert(inspect(name));
-</code></pre><p>Although parenthesis is optional, I&#39;d recommend using it if it&#39;s not immediately obvious what&#39;s being invoked, and with which arguments. In the last example, with inspect, I&#39;d definitely recommend wrapping at least the inspect invocation in parens.</p>
-<pre><code>alert inspect(a)
-</code></pre><p>If you don&#39;t pass any arguments with an invocation, CoffeeScript has no way of working out if you intend to invoke the function, or just treat it like a variable. In this respect, CoffeeScript&#39;s behavior differs from Ruby which always invokes references to functions, and is more similar to Python&#39;s. This has been the source of a few errors in my CoffeeScript programs, so it&#39;s worth keeping an eye out for cases where you intend to call a function without any arguments, and include parenthesis.</p>
+</code></pre>
+<p>Although parenthesis is optional, I&#39;d recommend using it if it&#39;s not immediately obvious what&#39;s being invoked, and with which arguments. In the last example, with inspect, I&#39;d definitely recommend wrapping at least the inspect invocation in parens.</p>
+<pre><code class="lang-coffeescript">alert inspect(a)
+</code></pre>
+<p>If you don&#39;t pass any arguments with an invocation, CoffeeScript has no way of working out if you intend to invoke the function, or just treat it like a variable. In this respect, CoffeeScript&#39;s behavior differs from Ruby which always invokes references to functions, and is more similar to Python&#39;s. This has been the source of a few errors in my CoffeeScript programs, so it&#39;s worth keeping an eye out for cases where you intend to call a function without any arguments, and include parenthesis.</p>
 <h2 id="function-context">Function context</h2>
 <p>Context changes are rife within JavaScript, especially with event callbacks, so CoffeeScript provides a few helpers to manage this. One such helper is a variation on <code>-&gt;</code>, the fat arrow function: <code>=&gt;</code></p>
 <p>Using the fat arrow instead of the thin arrow ensures that the function context will be bound to the local one. For example:</p>
 <p><em>CoffeScript</em>:</p>
-<pre><code>this.clickHandler = -&gt; alert &quot;clicked&quot;
-element.addEventListener &quot;click&quot;, (e) =&gt; this.clickHandler(e)
-</code></pre><p><em>JavaScript</em>:</p>
-<pre><code>var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
-this.clickHandler = function() {
-  return alert(&quot;clicked&quot;);
+<pre><code class="lang-coffeescript"><span class="hljs-keyword">this</span>.<span class="hljs-function"><span class="hljs-title">clickHandler</span> = -&gt;</span> alert <span class="hljs-string">"clicked"</span>
+element.addEventListener <span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-params">(e)</span> =&gt;</span> <span class="hljs-keyword">this</span>.clickHandler(e)
+</code></pre>
+<p><em>JavaScript</em>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> __bind = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(fn, me)</span>{</span> <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span> <span class="hljs-keyword">return</span> fn.apply(me, <span class="hljs-built_in">arguments</span>); }; };
+<span class="hljs-keyword">this</span>.clickHandler = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  <span class="hljs-keyword">return</span> alert(<span class="hljs-string">"clicked"</span>);
 };
-element.addEventListener(&quot;click&quot;, __bind(function(e) {
-  return this.clickHandler(e);
-}, this));
-</code></pre><p>The reason you might want to do this, is that callbacks from <code>addEventListener()</code> are executed in the context of the element, i.e. this equals the element. If you want to keep this equal to the local context, without doing a self = this dance, fat arrows are the way to go.</p>
+element.addEventListener(<span class="hljs-string">"click"</span>, __bind(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.clickHandler(e);
+}, <span class="hljs-keyword">this</span>));
+</code></pre>
+<p>The reason you might want to do this, is that callbacks from <code>addEventListener()</code> are executed in the context of the element, i.e. this equals the element. If you want to keep this equal to the local context, without doing a self = this dance, fat arrows are the way to go.</p>
 
                     
                     </section>
