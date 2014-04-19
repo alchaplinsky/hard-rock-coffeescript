@@ -6,11 +6,10 @@ module.exports = (grunt) =>
       development:
         input: "./"
         github: "alchapone/hard-rock-coffeescript"
-    "gh-pages": {
+    "gh-pages":
       options:
         base: '_book'
       src: ['**']
-      }
     clean:
       files: '.grunt'
     watch:
