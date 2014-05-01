@@ -13,7 +13,7 @@
     "grunt": "~0.4.1",
     "load-grunt-tasks": "~0.1.0",
     "grunt-contrib-watch": "0.6.1",
-    "grunt-gitbook": "0.2.3",
+    "grunt-gitbook": "0.3.2",
     "grunt-gh-pages": "0.9.1",
     "grunt-contrib-less": "~0.5.0",
     "grunt-contrib-clean": "~0.5.0"

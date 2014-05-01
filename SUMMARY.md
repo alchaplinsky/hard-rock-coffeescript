@@ -7,4 +7,5 @@
   * [Arrays and objects](syntax/arrays_and_objects.md)
   * [Operators and Aliases](syntax/operators_and_alises.md)
   * [Loops and comprehensions](syntax/loops_and_comprehensions.md)
-* [Classes]('classes/')
+* [Classes]('classes/index.md')
+  * [Variables and Scope](syntax/variables.md)
