@@ -1,9 +1,10 @@
 CACHE MANIFEST
-# Revision 1398978833992
+# Revision 1398978904231
 
 CACHE:
 index.html
 installation/index.html
+classes/index.html
 syntax/arrays_and_objects.html
 syntax/flow_control.html
 syntax/functions.html
