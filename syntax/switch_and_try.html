@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Syntax | </title>
+        <title>Switch/Case and Try/Catch | </title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -13,13 +13,13 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../syntax/variables.html" />
+        <link rel="next" href="../classes/index.html" />
         
         
-        <link rel="prev" href="../installation/index.html" />
+        <link rel="prev" href="../syntax/loops_and_comprehensions.html" />
         
 
-        <meta property="og:title" content="Syntax | ">
+        <meta property="og:title" content="Switch/Case and Try/Catch | ">
         <meta property="og:site_name" content="">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -39,7 +39,7 @@
         <link rel="stylesheet" href="../gitbook/style.css">
         
         
-    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="2" data-basepath=".." data-revision="1399063249158">
+    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="2.7" data-basepath=".." data-revision="1399063249158">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -75,7 +75,7 @@
             <a href="https://github.com/alchapone/hard-rock-coffeescript/issues" target="blank">Questions and Issues</a>
         </li>
         <li>
-            <a href="https://github.com/alchapone/hard-rock-coffeescript/edit/master/syntax/scoping.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/alchapone/hard-rock-coffeescript/edit/master/syntax/switch_and_try.md" target="blank">Edit and Contribute</a>
         </li>
         <li class="divider"></li>
         
@@ -224,7 +224,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 13.333333333333334%;min-width: 6.666666666666667%;"></div>
+        <div class="inner" style="width: 60%;min-width: 53.333333333333336%;"></div>
     </div>
     <div class="chapters">
     
@@ -234,19 +234,19 @@
     
         <a href="../syntax/scoping.html" title="Syntax" class="chapter done new-chapter" data-progress="2" style="left: 13.333333333333334%;"></a>
     
-        <a href="../syntax/variables.html" title="Variables and Scope" class="chapter  " data-progress="2.1" style="left: 20%;"></a>
+        <a href="../syntax/variables.html" title="Variables and Scope" class="chapter done " data-progress="2.1" style="left: 20%;"></a>
     
-        <a href="../syntax/functions.html" title="Functions" class="chapter  " data-progress="2.2" style="left: 26.666666666666668%;"></a>
+        <a href="../syntax/functions.html" title="Functions" class="chapter done " data-progress="2.2" style="left: 26.666666666666668%;"></a>
     
-        <a href="../syntax/flow_control.html" title="Flow control" class="chapter  " data-progress="2.3" style="left: 33.333333333333336%;"></a>
+        <a href="../syntax/flow_control.html" title="Flow control" class="chapter done " data-progress="2.3" style="left: 33.333333333333336%;"></a>
     
-        <a href="../syntax/arrays_and_objects.html" title="Arrays and objects" class="chapter  " data-progress="2.4" style="left: 40%;"></a>
+        <a href="../syntax/arrays_and_objects.html" title="Arrays and objects" class="chapter done " data-progress="2.4" style="left: 40%;"></a>
     
-        <a href="../syntax/operators_and_alises.html" title="Operators and Aliases" class="chapter  " data-progress="2.5" style="left: 46.666666666666664%;"></a>
+        <a href="../syntax/operators_and_alises.html" title="Operators and Aliases" class="chapter done " data-progress="2.5" style="left: 46.666666666666664%;"></a>
     
-        <a href="../syntax/loops_and_comprehensions.html" title="Loops and comprehensions" class="chapter  " data-progress="2.6" style="left: 53.333333333333336%;"></a>
+        <a href="../syntax/loops_and_comprehensions.html" title="Loops and comprehensions" class="chapter done " data-progress="2.6" style="left: 53.333333333333336%;"></a>
     
-        <a href="../syntax/switch_and_try.html" title="Switch/Case and Try/Catch" class="chapter  " data-progress="2.7" style="left: 60%;"></a>
+        <a href="../syntax/switch_and_try.html" title="Switch/Case and Try/Catch" class="chapter done " data-progress="2.7" style="left: 60%;"></a>
     
         <a href="../classes/index.html" title="Classes" class="chapter  new-chapter" data-progress="3" style="left: 66.66666666666667%;"></a>
     
@@ -265,19 +265,65 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_12">
+                    <section class="normal" id="section-gitbook_13">
                     
-                        <h2 id="scoping-and-variables-safety">Scoping and variables safety</h2>
-<p>In CoffeeScript you don&#39;t have direct access to the var keyword, it&#39;s impossible to shadow an outer variable on purpose, you may only refer to it. So be careful that you&#39;re not reusing the name of an external variable accidentally, if you&#39;re writing a deeply nested function.</p>
-<p>Although suppressed within this documentation for clarity, all CoffeeScript output is wrapped in an anonymous function.</p>
-<pre><code class="lang-javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
-
-  <span class="hljs-comment">// your code goes here</span>
-
-})();
+                        <h2 id="switch-when-else">Switch/When/Else</h2>
+<p>Switch statements in JavaScript are a bit awkward. You need to remember to break at the end of every case statement to
+avoid accidentally falling through to the default case. CoffeeScript prevents accidental fall-through, and can convert
+the <code>switch</code>   into a returnable, assignable expression. The format is: <code>switch</code> condition,  <code>when</code> clauses,
+ <code>else</code> the default case.</p>
+<p>Like in Ruby, switch statements in CoffeeScript can take multiple values for each when clause. If any of the values match,
+the clause runs.</p>
+<p><em>CoffeeScript</em></p>
+<pre><code class="lang-coffeescript"><span class="hljs-keyword">switch</span> member
+  <span class="hljs-keyword">when</span> <span class="hljs-string">"Jimmy Page"</span> <span class="hljs-keyword">then</span> goPlayGuitar
+  <span class="hljs-keyword">when</span> <span class="hljs-string">"Sid Vicious"</span> <span class="hljs-keyword">then</span> goDrinkBeer
+  <span class="hljs-keyword">when</span> <span class="hljs-string">"Lars Ulrich"</span> <span class="hljs-keyword">then</span> goSmashDrumkit
+  <span class="hljs-keyword">when</span> <span class="hljs-string">"Axl Rose"</span> <span class="hljs-keyword">then</span> goSingAloud
+  <span class="hljs-keyword">else</span> goHome
 </code></pre>
-<p>This safety wrapper, combined with the automatic generation of the var keyword, make it exceedingly difficult to pollute the global namespace by accident.</p>
-<p>If you&#39;d like to create top-level variables for other scripts to use, attach them as properties on window, or on the exports object in CommonJS. The existential operator (covered below), gives you a reliable way to figure out where to add them; if you&#39;re targeting both CommonJS and the browser: <code>exports ? this</code></p>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">switch</span> (member) {
+  <span class="hljs-keyword">case</span> <span class="hljs-string">"Jimmy Page"</span>:
+    goPlayGuitar;
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-string">"Sid Vicious"</span>:
+    goDrinkBeer;
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-string">"Lars Ulrich"</span>:
+    goSmashDrumkit;
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-string">"Axl Rose"</span>:
+    goSingAloud;
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">default</span>:
+    goHome;
+}
+</code></pre>
+<h2 id="try-catch-finally">Try/Catch/Finally</h2>
+<p>Try/catch statements are just about the same as JavaScript, the only difference - they work as expressions.</p>
+<p><em>CoffeeScript</em></p>
+<pre><code class="lang-coffeescript"><span class="hljs-keyword">try</span>
+  listenToAcDc()
+  notSingAlongWithBrianJohnson()
+<span class="hljs-keyword">catch</span> error
+  <span class="hljs-built_in">console</span>.log error
+<span class="hljs-keyword">finally</span>
+  cleanUp()
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> error;
+
+<span class="hljs-keyword">try</span> {
+  listenToAcDc();
+  notSingAlongWithBrianJohnson();
+} <span class="hljs-keyword">catch</span> (_error) {
+  error = _error;
+  console.log(error);
+} <span class="hljs-keyword">finally</span> {
+  cleanUp();
+}
+</code></pre>
 
                     
                     </section>
@@ -287,10 +333,10 @@
         </div>
 
         
-        <a href="../installation/index.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        <a href="../syntax/loops_and_comprehensions.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../syntax/variables.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        <a href="../classes/index.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
