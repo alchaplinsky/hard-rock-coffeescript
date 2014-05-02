@@ -13,7 +13,7 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../syntax/variables.html" />
+        <link rel="next" href="../classes/inheritance.html" />
         
         
         <link rel="prev" href="../syntax/loops_and_comprehensions.html" />
@@ -39,7 +39,7 @@
         <link rel="stylesheet" href="../gitbook/style.css">
         
         
-    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="3" data-basepath=".." data-revision="1398978904230">
+    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="3" data-basepath=".." data-revision="1399053048546">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -162,10 +162,26 @@
                 
                 <ul class="articles">
                     
-                        <li  data-level="3.1" data-path="syntax/variables.html">
+                        <li  data-level="3.1" data-path="classes/inheritance.html">
                             
-                            <a href="../syntax/variables.html">
-                                <i class="fa fa-check"></i> <b>3.1.</b> Variables and Scope
+                            <a href="../classes/inheritance.html">
+                                <i class="fa fa-check"></i> <b>3.1.</b> Inheritance &amp; Super
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.2" data-path="classes/instance_and_static_properties.html">
+                            
+                            <a href="../classes/instance_and_static_properties.html">
+                                <i class="fa fa-check"></i> <b>3.2.</b> Instance &amp; Static properties
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.3" data-path="classes/extending_classes.html">
+                            
+                            <a href="../classes/extending_classes.html">
+                                <i class="fa fa-check"></i> <b>3.3.</b> Mixins and Extending classes
                             </a>
                             
                         </li>
@@ -182,29 +198,35 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 88.88888888888889%;min-width: 77.77777777777777%;"></div>
+        <div class="inner" style="width: 75%;min-width: 66.66666666666667%;"></div>
     </div>
     <div class="chapters">
     
         <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
     
-        <a href="../installation/index.html" title="Installation" class="chapter done new-chapter" data-progress="1" style="left: 11.11111111111111%;"></a>
+        <a href="../installation/index.html" title="Installation" class="chapter done new-chapter" data-progress="1" style="left: 8.333333333333334%;"></a>
     
-        <a href="../syntax/scoping.html" title="Syntax" class="chapter done new-chapter" data-progress="2" style="left: 22.22222222222222%;"></a>
+        <a href="../syntax/scoping.html" title="Syntax" class="chapter done new-chapter" data-progress="2" style="left: 16.666666666666668%;"></a>
+    
+        <a href="../syntax/variables.html" title="Variables and Scope" class="chapter done " data-progress="2.1" style="left: 25%;"></a>
     
         <a href="../syntax/functions.html" title="Functions" class="chapter done " data-progress="2.2" style="left: 33.333333333333336%;"></a>
     
-        <a href="../syntax/flow_control.html" title="Flow control" class="chapter done " data-progress="2.3" style="left: 44.44444444444444%;"></a>
+        <a href="../syntax/flow_control.html" title="Flow control" class="chapter done " data-progress="2.3" style="left: 41.666666666666664%;"></a>
     
-        <a href="../syntax/arrays_and_objects.html" title="Arrays and objects" class="chapter done " data-progress="2.4" style="left: 55.55555555555556%;"></a>
+        <a href="../syntax/arrays_and_objects.html" title="Arrays and objects" class="chapter done " data-progress="2.4" style="left: 50%;"></a>
     
-        <a href="../syntax/operators_and_alises.html" title="Operators and Aliases" class="chapter done " data-progress="2.5" style="left: 66.66666666666667%;"></a>
+        <a href="../syntax/operators_and_alises.html" title="Operators and Aliases" class="chapter done " data-progress="2.5" style="left: 58.333333333333336%;"></a>
     
-        <a href="../syntax/loops_and_comprehensions.html" title="Loops and comprehensions" class="chapter done " data-progress="2.6" style="left: 77.77777777777777%;"></a>
+        <a href="../syntax/loops_and_comprehensions.html" title="Loops and comprehensions" class="chapter done " data-progress="2.6" style="left: 66.66666666666667%;"></a>
     
-        <a href="../classes/index.html" title="Classes" class="chapter done new-chapter" data-progress="3" style="left: 88.88888888888889%;"></a>
+        <a href="../classes/index.html" title="Classes" class="chapter done new-chapter" data-progress="3" style="left: 75%;"></a>
     
-        <a href="../syntax/variables.html" title="Variables and Scope" class="chapter  " data-progress="3.1" style="left: 100%;"></a>
+        <a href="../classes/inheritance.html" title="Inheritance &amp; Super" class="chapter  " data-progress="3.1" style="left: 83.33333333333333%;"></a>
+    
+        <a href="../classes/instance_and_static_properties.html" title="Instance &amp; Static properties" class="chapter  " data-progress="3.2" style="left: 91.66666666666667%;"></a>
+    
+        <a href="../classes/extending_classes.html" title="Mixins and Extending classes" class="chapter  " data-progress="3.3" style="left: 100%;"></a>
     
     </div>
 </div>
@@ -216,6 +238,71 @@
                         <h2 id="classes">Classes</h2>
 <p>JavaScript doesn’t have a traditional class system. Instead, it has prototypes. Prototypes can be extremely versatile and powerful, but they’re confusing to novices. Hence, CoffeeScript has created a traditional class system.</p>
 <p>Instead of repetitively attaching functions to a prototype, CoffeeScript provides a basic class structure that allows you to name your class, set the superclass, assign prototypal properties, and define the constructor, in a single assignable expression.</p>
+<p>Behind the scenes, CoffeeScript is using JavaScript&#39;s native prototype to create classes; adding a bit of syntactic sugar for static property inheritance and context persistence. As a developer all that&#39;s exposed to you is the class keyword.</p>
+<p><em>CoffeeScript</em></p>
+<pre><code class="lang-coffeescript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Guitar</span></span>
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> Guitar;
+Guitar = (<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Guitar</span><span class="hljs-params">()</span> {</span>}
+  <span class="hljs-keyword">return</span> Guitar;
+})();
+</code></pre>
+<p>In the example above, Guitar is the name of the class, and also the name of the returned variable that you can use to
+create instances. Behind the scenes CoffeeScript is using constructor functions, which means you can instantiate classes
+using the new operator.</p>
+<p><em>CoffeeScript</em></p>
+<pre><code class="lang-coffeescript">gibson = <span class="hljs-keyword">new</span> Guitar()
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> gibson;
+gibson = <span class="hljs-keyword">new</span> Guitar();
+</code></pre>
+<p>Defining constructors, functions that get invoked on instantiation, is simple, just use a function named <code>constructor</code>.
+This works pretty similar to Python&#39;s <code>__init__</code> or Ruby&#39;s <code>initialize</code> methods . It prepares the new object for use,
+accepting arguments that the constructor uses to set required instance variables.</p>
+<p><em>CoffeeScript</em></p>
+<pre><code class="lang-coffeescript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Guitar</span></span>
+  <span class="hljs-attribute">constructor</span>: <span class="hljs-function"><span class="hljs-params">(type)</span> -&gt;</span>
+    <span class="hljs-property">@type</span> = type
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-coffeescript"><span class="hljs-reserved">var</span> Guitar;
+Guitar = (<span class="hljs-reserved">function</span>() {
+  <span class="hljs-reserved">function</span> Guitar(type) {
+    <span class="hljs-keyword">this</span>.type = type;
+  }
+  <span class="hljs-keyword">return</span> Guitar;
+})();
+</code></pre>
+<p>As you can see, constructor accepts <code>type</code> as an argument and sets it as an instance variable. CoffeeScript provides
+a shorthand for the common pattern of setting instance properties. By prefixing argument&#39;s with <code>@</code>, CoffeeScript will
+automatically set the arguments as instance properties in the constructor. Indeed, this shorthand will also work for normal
+functions outside classes. The example below is equivalent to the last example, where we set the instance properties manually.</p>
+<p><em>CoffeeScript</em></p>
+<pre><code class="lang-coffeescript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Guitar</span></span>
+  <span class="hljs-attribute">constructor</span>: <span class="hljs-function"><span class="hljs-params">(<span class="hljs-property">@type</span>)</span> -&gt;</span>
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> Guitar;
+Guitar = (<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Guitar</span><span class="hljs-params">(type)</span> {</span>
+    <span class="hljs-keyword">this</span>.type = type;
+  }
+  <span class="hljs-keyword">return</span> Guitar;
+})();
+</code></pre>
+<p>So constructor is called when we use <code>new</code> keyword along with class name. Any arguments passed to a class on instantiation are proxied to the constructor function.</p>
+<p><em>CoffeeScript</em></p>
+<pre><code class="lang-coffeescript">gibson = <span class="hljs-keyword">new</span> Guitar(<span class="hljs-string">"Les Paul"</span>)
+alert <span class="hljs-string">"Guitar is a <span class="hljs-subst">#{gibson.name}</span>"</span>
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> gibson;
+gibson = <span class="hljs-keyword">new</span> Guitar(<span class="hljs-string">"Les Paul"</span>);
+alert(<span class="hljs-string">"Guitar is a "</span> + gibson.name);
+</code></pre>
 
                     
                     </section>
@@ -228,7 +315,7 @@
         <a href="../syntax/loops_and_comprehensions.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../syntax/variables.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        <a href="../classes/inheritance.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

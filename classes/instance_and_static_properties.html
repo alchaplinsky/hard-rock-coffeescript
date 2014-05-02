@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Functions | </title>
+        <title>Instance &amp; Static properties | </title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -13,13 +13,13 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../syntax/flow_control.html" />
+        <link rel="next" href="../classes/extending_classes.html" />
         
         
-        <link rel="prev" href="../syntax/variables.html" />
+        <link rel="prev" href="../classes/inheritance.html" />
         
 
-        <meta property="og:title" content="Functions | ">
+        <meta property="og:title" content="Instance &amp; Static properties | ">
         <meta property="og:site_name" content="">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -39,7 +39,7 @@
         <link rel="stylesheet" href="../gitbook/style.css">
         
         
-    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="2.2" data-basepath=".." data-revision="1399053048546">
+    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="3.2" data-basepath=".." data-revision="1399053048546">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -75,7 +75,7 @@
             <a href="https://github.com/alchapone/hard-rock-coffeescript/issues" target="blank">Questions and Issues</a>
         </li>
         <li>
-            <a href="https://github.com/alchapone/hard-rock-coffeescript/edit/master/syntax/functions.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/alchapone/hard-rock-coffeescript/edit/master/classes/instance_and_static_properties.md" target="blank">Edit and Contribute</a>
         </li>
         <li class="divider"></li>
         
@@ -198,7 +198,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 33.333333333333336%;min-width: 25%;"></div>
+        <div class="inner" style="width: 91.66666666666667%;min-width: 83.33333333333333%;"></div>
     </div>
     <div class="chapters">
     
@@ -212,19 +212,19 @@
     
         <a href="../syntax/functions.html" title="Functions" class="chapter done " data-progress="2.2" style="left: 33.333333333333336%;"></a>
     
-        <a href="../syntax/flow_control.html" title="Flow control" class="chapter  " data-progress="2.3" style="left: 41.666666666666664%;"></a>
+        <a href="../syntax/flow_control.html" title="Flow control" class="chapter done " data-progress="2.3" style="left: 41.666666666666664%;"></a>
     
-        <a href="../syntax/arrays_and_objects.html" title="Arrays and objects" class="chapter  " data-progress="2.4" style="left: 50%;"></a>
+        <a href="../syntax/arrays_and_objects.html" title="Arrays and objects" class="chapter done " data-progress="2.4" style="left: 50%;"></a>
     
-        <a href="../syntax/operators_and_alises.html" title="Operators and Aliases" class="chapter  " data-progress="2.5" style="left: 58.333333333333336%;"></a>
+        <a href="../syntax/operators_and_alises.html" title="Operators and Aliases" class="chapter done " data-progress="2.5" style="left: 58.333333333333336%;"></a>
     
-        <a href="../syntax/loops_and_comprehensions.html" title="Loops and comprehensions" class="chapter  " data-progress="2.6" style="left: 66.66666666666667%;"></a>
+        <a href="../syntax/loops_and_comprehensions.html" title="Loops and comprehensions" class="chapter done " data-progress="2.6" style="left: 66.66666666666667%;"></a>
     
-        <a href="../classes/index.html" title="Classes" class="chapter  new-chapter" data-progress="3" style="left: 75%;"></a>
+        <a href="../classes/index.html" title="Classes" class="chapter done new-chapter" data-progress="3" style="left: 75%;"></a>
     
-        <a href="../classes/inheritance.html" title="Inheritance &amp; Super" class="chapter  " data-progress="3.1" style="left: 83.33333333333333%;"></a>
+        <a href="../classes/inheritance.html" title="Inheritance &amp; Super" class="chapter done " data-progress="3.1" style="left: 83.33333333333333%;"></a>
     
-        <a href="../classes/instance_and_static_properties.html" title="Instance &amp; Static properties" class="chapter  " data-progress="3.2" style="left: 91.66666666666667%;"></a>
+        <a href="../classes/instance_and_static_properties.html" title="Instance &amp; Static properties" class="chapter done " data-progress="3.2" style="left: 91.66666666666667%;"></a>
     
         <a href="../classes/extending_classes.html" title="Mixins and Extending classes" class="chapter  " data-progress="3.3" style="left: 100%;"></a>
     
@@ -233,105 +233,84 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_9">
+                    <section class="normal" id="section-gitbook_5">
                     
-                        <h2 id="functions">Functions</h2>
-<p>CoffeeScript removes the rather verbose function statement, and replaces it with a thin arrow: <code>-&gt;</code>.
-Functions can be one liners or indented on multiple lines. The last expression in the function is implicitly returned.
-In other words, you don&#39;t need to use the return statement unless you want to return earlier inside the function.</p>
-<p>With that in mind, let&#39;s take a look at an example:</p>
-<p><em>CoffeScript</em>:</p>
-<pre><code class="lang-coffeescript"><span class="hljs-function"><span class="hljs-title">func</span> = -&gt;</span> <span class="hljs-string">"bar"</span>
-</code></pre>
-<p><em>JavaScript</em>:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> func;
-func = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-  <span class="hljs-keyword">return</span> <span class="hljs-string">"bar"</span>;
-};
-</code></pre>
-<p>You can see in the resultant compilation, the -&gt; is turned into a function statement, and the &quot;bar&quot; string is automatically returned.</p>
-<p>As mentioned earlier, there&#39;s no reason why we can&#39;t use multiple lines, as long as we indent the function body properly.</p>
-<p><em>CoffeScript</em>:</p>
-<pre><code class="lang-coffeescript"><span class="hljs-function"><span class="hljs-title">func</span> = -&gt;</span>
-  <span class="hljs-comment"># An extra line</span>
-  <span class="hljs-string">"bar"</span>
-</code></pre>
-<p><em>JavaScript</em>:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> func;
-func = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-  <span class="hljs-keyword">return</span> <span class="hljs-string">"bar"</span>;
-};
-</code></pre>
-<h2 id="function-arguments">Function arguments</h2>
-<p>What about passing arguments to a function? Well, CoffeeScript allows you do that by specifying arguments
-in parentheses before the arrow.</p>
-<p><em>CoffeScript</em>:</p>
-<pre><code class="lang-coffeescript"><span class="hljs-function"><span class="hljs-title">times</span> = <span class="hljs-params">(a, b)</span> -&gt;</span> a * b
-</code></pre>
-<p><em>JavaScript</em>:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> times;
-times = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a, b)</span> {</span>
-  <span class="hljs-keyword">return</span> a * b;
-};
-</code></pre>
-<p>CoffeeScript supports default arguments too, for example:</p>
-<p><em>CoffeScript</em>:</p>
-<pre><code class="lang-coffeescript"><span class="hljs-function"><span class="hljs-title">times</span> = <span class="hljs-params">(a = <span class="hljs-number">1</span>, b = <span class="hljs-number">2</span>)</span> -&gt;</span> a * b
-</code></pre>
-<p><em>JavaScript</em>:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> times;
-times = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a, b)</span> {</span>
-  <span class="hljs-keyword">if</span> (a == <span class="hljs-literal">null</span>) {
-    a = <span class="hljs-number">1</span>;
-  }
-  <span class="hljs-keyword">if</span> (b == <span class="hljs-literal">null</span>) {
-    b = <span class="hljs-number">2</span>;
-  }
-  <span class="hljs-keyword">return</span> a * b;
-};
-</code></pre>
-<h2 id="function-invocation">Function invocation</h2>
-<p>Functions can be invoked exactly as in JavaScript, with parens (), apply() or call(). However, like Ruby, CoffeeScript will automatically call functions if they are invoked with at least one argument.</p>
-<p><em>CoffeScript</em>:</p>
-<pre><code class="lang-coffeescript">name = <span class="hljs-string">'Hard Rock'</span>
+                        <h3 id="instance-properties">Instance properties</h3>
+<p>Adding additional instance properties to a class is very straightforward, it&#39;s exactly the syntax as adding properties onto an object. Just make sure properties are indented correctly inside the class body.</p>
+<p><em>CoffeeScript</em></p>
+<pre><code class="lang-coffeescript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Band</span></span>
+  <span class="hljs-attribute">members</span>: <span class="hljs-number">4</span>
 
-alert name
-<span class="hljs-comment"># Equivalent to:</span>
-alert(name)
+  <span class="hljs-attribute">play</span>: <span class="hljs-function"><span class="hljs-params">(song)</span> -&gt;</span>
 
-alert inspect a
-<span class="hljs-comment"># Equivalent to:</span>
-alert(inspect(a))
+band = <span class="hljs-keyword">new</span> Band()  
+band.play(<span class="hljs-string">'Brick in the wall'</span>)
 </code></pre>
-<p><em>JavaScript</em>:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> name;
-name = <span class="hljs-string">'Hard Rock'</span>;
-alert(name);
-alert(name);
-alert(inspect(name));
-alert(inspect(name));
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> Band, band;
+Band = (<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Band</span><span class="hljs-params">()</span> {</span>}
+  Band.prototype.members = <span class="hljs-number">4</span>;
+  Band.prototype.play = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(song)</span> {</span>
+  };
+  <span class="hljs-keyword">return</span> Band;
+})();
+band = <span class="hljs-keyword">new</span> Band();
+band.play(<span class="hljs-string">'Brick in the wall'</span>);
 </code></pre>
-<p>Although parenthesis is optional, I&#39;d recommend using it if it&#39;s not immediately obvious what&#39;s being invoked, and with which arguments. In the last example, with inspect, I&#39;d definitely recommend wrapping at least the inspect invocation in parens.</p>
-<pre><code class="lang-coffeescript">alert inspect(a)
+<p>Context changes are rife within JavaScript, and earlier in the Syntax chapter we talked about how CoffeeScript can lock the value of this to a particular context using a fat arrow function: =&gt;. This ensures that whatever context a function is called under, it&#39;ll always execute inside the context it was created in. CoffeeScript has extended support for fat arrows to classes, so by using a fat arrow for an instance method you&#39;ll ensure that it&#39;s invoked in the correct context, and that this is always equal to the current instance.</p>
+<p><em>CoffeeScript</em></p>
+<pre><code class="lang-coffeescript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Band</span></span>
+  <span class="hljs-attribute">members</span>: <span class="hljs-number">4</span>
+
+  <span class="hljs-attribute">play</span>: <span class="hljs-function"><span class="hljs-params">(song)</span> =&gt;</span>
+    <span class="hljs-built_in">console</span>.log <span class="hljs-string">"Band is playing <span class="hljs-subst">#{song}</span>"</span>
+
+band = <span class="hljs-keyword">new</span> Band()  
+$(<span class="hljs-string">'#play-button'</span>).click(band.play)
 </code></pre>
-<p>If you don&#39;t pass any arguments with an invocation, CoffeeScript has no way of working out if you intend to invoke the function, or just treat it like a variable. In this respect, CoffeeScript&#39;s behavior differs from Ruby which always invokes references to functions, and is more similar to Python&#39;s. This has been the source of a few errors in my CoffeeScript programs, so it&#39;s worth keeping an eye out for cases where you intend to call a function without any arguments, and include parenthesis.</p>
-<h2 id="function-context">Function context</h2>
-<p>Context changes are rife within JavaScript, especially with event callbacks, so CoffeeScript provides a few helpers to manage this. One such helper is a variation on <code>-&gt;</code>, the fat arrow function: <code>=&gt;</code></p>
-<p>Using the fat arrow instead of the thin arrow ensures that the function context will be bound to the local one. For example:</p>
-<p><em>CoffeScript</em>:</p>
-<pre><code class="lang-coffeescript"><span class="hljs-keyword">this</span>.<span class="hljs-function"><span class="hljs-title">clickHandler</span> = -&gt;</span> alert <span class="hljs-string">"clicked"</span>
-element.addEventListener <span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-params">(e)</span> =&gt;</span> <span class="hljs-keyword">this</span>.clickHandler(e)
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> Band, band,
+  __bind = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(fn, me)</span>{</span> <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span> <span class="hljs-keyword">return</span> fn.apply(me, <span class="hljs-built_in">arguments</span>); }; Â
+Band = (<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Band</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">this</span>.play = __bind(<span class="hljs-keyword">this</span>.play, <span class="hljs-keyword">this</span>);
+  }
+  Band.prototype.members = <span class="hljs-number">4</span>;
+  Band.prototype.play = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(song)</span> {</span>
+    <span class="hljs-keyword">return</span> console.log(<span class="hljs-string">"Band is playing "</span> + song);
+  };
+  <span class="hljs-keyword">return</span> Band;
+})();
+
+band = <span class="hljs-keyword">new</span> Band();
+$(<span class="hljs-string">'#play-button'</span>).click(band.play);
 </code></pre>
-<p><em>JavaScript</em>:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> __bind = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(fn, me)</span>{</span> <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span> <span class="hljs-keyword">return</span> fn.apply(me, <span class="hljs-built_in">arguments</span>); }; };
-<span class="hljs-keyword">this</span>.clickHandler = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-  <span class="hljs-keyword">return</span> alert(<span class="hljs-string">"clicked"</span>);
-};
-element.addEventListener(<span class="hljs-string">"click"</span>, __bind(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
-  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.clickHandler(e);
-}, <span class="hljs-keyword">this</span>));
+<p>As demonstrated in the example above, this is especially useful in event callbacks. Normally the sell() function would be invoked in the context of the #sell element. However, by using fat arrows for sell(), we&#39;re ensuring the correct context is being maintained, and that this.price equals 5.</p>
+<h3 id="static-properties">Static properties</h3>
+<p>How about defining class (i.e. static) properties? Well, it turns out that inside a class definition, this refers to the class object. In other words you can set class properties by setting them directly on this.</p>
+<p><em>CoffeeScript</em></p>
+<pre><code class="lang-coffeescript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Band</span></span>
+  <span class="hljs-keyword">this</span>.<span class="hljs-function"><span class="hljs-title">play</span> = <span class="hljs-params">(song)</span> -&gt;</span>
+
+  Band.play(<span class="hljs-string">'Brick in the wall'</span>)
 </code></pre>
-<p>The reason you might want to do this, is that callbacks from <code>addEventListener()</code> are executed in the context of the element, i.e. this equals the element. If you want to keep this equal to the local context, without doing a self = this dance, fat arrows are the way to go.</p>
+<p>*JavaScript</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> Band;
+Band = (<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Band</span><span class="hljs-params">()</span> {</span>}
+  Band.play = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>};
+  Band.play(<span class="hljs-string">'Brick in the wall'</span>);
+  <span class="hljs-keyword">return</span> Band;
+})();
+</code></pre>
+<p>In fact, as you may remember, CoffeeScript aliases this to @, which lets you write static properties even more succinctly:</p>
+<p><em>CoffeeScript</em></p>
+<pre><code class="lang-coffeescript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Band</span></span>
+  <span class="hljs-property">@play</span> = <span class="hljs-function"><span class="hljs-params">(song)</span> -&gt;</span>
+
+  Band.play(<span class="hljs-string">'Brick in the wall'</span>)
+</code></pre>
 
                     
                     </section>
@@ -341,10 +320,10 @@ element.addEventListener(<span class="hljs-string">"click"</span>, __bind(<span 
         </div>
 
         
-        <a href="../syntax/variables.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        <a href="../classes/inheritance.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../syntax/flow_control.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        <a href="../classes/extending_classes.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
