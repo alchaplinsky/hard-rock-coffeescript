@@ -14,3 +14,8 @@
   * [Mixins and Extending classes](classes/extending_classes.md)
 * [More CoffeeScript Goodness](more/index.md)
 * [Design Patterns](patterns/index.md)
+  * [Singleton Pattern](patterns/singleton.md)
+  * [Observer Pattern](patterns/observer.md)
+  * [Factory Pattern](patterns/factory.md)
+  * [Decorator Pattern](patterns/decorator.md)
+  * [Adapter Pattern](patterns/adapter.md)
