@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1399063249159
+# Revision 1399100528405
 
 CACHE:
 classes/extending_classes.html
@@ -8,6 +8,12 @@ classes/inheritance.html
 classes/instance_and_static_properties.html
 index.html
 installation/index.html
+patterns/adapter.html
+patterns/decorator.html
+patterns/factory.html
+patterns/index.html
+patterns/observer.html
+patterns/singleton.html
 syntax/arrays_and_objects.html
 syntax/flow_control.html
 syntax/functions.html
