@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1399327615944
+# Revision 1399328195332
 
 CACHE:
 classes/extending_classes.html
@@ -12,14 +12,14 @@ patterns/adapter.html
 patterns/decorator.html
 patterns/factory.html
 patterns/index.html
-patterns/observer.html
 patterns/singleton.html
+patterns/observer.html
 syntax/arrays_and_objects.html
 syntax/flow_control.html
 syntax/functions.html
 syntax/loops_and_comprehensions.html
-syntax/operators_and_alises.html
 syntax/scoping.html
+syntax/operators_and_alises.html
 syntax/switch_and_try.html
 syntax/variables.html
 gitbook/app.js
@@ -58,8 +58,8 @@ gitbook/jsrepl/sandbox.html
 gitbook/jsrepl/sandbox.js
 gitbook/print.css
 gitbook/style.css
-gitbook/plugins/gitbook-plugin-mathjax/plugin.js
 gitbook/plugins/gitbook-plugin-mixpanel/plugin.js
+gitbook/plugins/gitbook-plugin-mathjax/plugin.js
 
 NETWORK:
 *
