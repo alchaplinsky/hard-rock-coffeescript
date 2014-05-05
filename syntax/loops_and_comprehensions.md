@@ -1,6 +1,6 @@
 ## Loops and Comprehensions
 Array iteration in JavaScript has a rather archaic syntax, reminiscent of an older language like C
-rather than a modern object orientated one. The introduction of ES5 improved that situation somewhat,
+rather than a modern object-orientated one. The introduction of ES5 improved that situation somewhat,
 with the forEach() function, but that still requires a function call every iteration and is therefore
 much slower. Again, CoffeeScript comes to the rescue, with a beautiful syntax:
 
@@ -55,7 +55,7 @@ guitarists = ["Young", "Gilmour", "Blackmore"]
 like guitarist for guitarist in guitarists when guitarist[0] is "G"
 ```
 
-You can also use comprehensions for iterating over properties in objects. Instead of the in keyword, use of.
+You can also use comprehensions for iterating over properties in objects. Instead of the `in` keyword, use `of`.
 
 *CoffeeScript*
 ``` coffeescript

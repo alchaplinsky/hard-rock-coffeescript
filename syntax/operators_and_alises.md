@@ -54,7 +54,7 @@ comes close, but fails for zero, the empty string, and `false`.
 ### Existence
 CoffeeScript's existential operator `?` returns `true` unless a variable is `null` or `undefined`, which makes it analogous to Ruby's `nil?`
 
-Behind the scens CoffeeScript will check previously defined variables like this:
+Behind the scenes CoffeeScript will check previously defined variables like this:
 
 ``` javascript
 variable != null;

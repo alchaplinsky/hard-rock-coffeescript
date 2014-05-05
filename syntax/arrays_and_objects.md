@@ -40,8 +40,8 @@ rangeTwo = [1...10]
 *JavaScript*
 ``` javascript
 var rangeOne, rangeTwo;
-range = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-range = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+rangeOne = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+rangeTwo = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 ```
 If, however, the range is specified immediately after a variable, CoffeeScript converts it into a slice() method call.
 ``` coffeescript

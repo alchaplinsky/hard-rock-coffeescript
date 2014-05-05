@@ -10,7 +10,7 @@ You can use the browser-based CoffeeScript compiler, by including [compiler scri
 ```
 This will compile all your CoffeeScript code to JavaScript at runtime.
 
-There's also a command line version of coffee compiler that is available as Node.js utility. he core compiler however, does not depend on Node, and can be run in any JavaScript environment.
+There's also a command line version of coffee compiler that is available as Node.js utility. The core compiler however, does not depend on Node, and can be run in any JavaScript environment.
 
 To install, first make sure you have a working copy of the latest stable version of Node.js, and npm (the Node Package Manager). You can then install CoffeeScript with npm:
 ```
