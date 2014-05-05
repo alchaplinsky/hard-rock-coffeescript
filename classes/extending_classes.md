@@ -18,7 +18,7 @@ guitar = new Guitar()
 guitar.strings
 ```
 *JavaScript*
-``` javascript
+``` js
 var extend, guitar, include;
 extend = function(obj, mixin) {
   var method, name;
@@ -61,6 +61,7 @@ class Module
     obj.included?.apply(@)
     @
 ```
+*JavaScript*
 ``` javascript
 var Module, moduleKeywords,
   __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };

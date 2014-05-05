@@ -58,8 +58,7 @@ var error;
 try {
   listenToAcDc();
   notSingAlongWithBrianJohnson();
-} catch (_error) {
-  error = _error;
+} catch (error) {
   console.log(error);
 } finally {
   cleanUp();

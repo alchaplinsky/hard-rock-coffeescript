@@ -104,7 +104,7 @@ Although parenthesis is optional, I'd recommend using it if it's not immediately
 alert inspect(a)
 ```
 
-If you don't pass any arguments with an invocation, CoffeeScript has no way of working out if you intend to invoke the function, or just treat it like a variable. In this respect, CoffeeScript's behavior differs from Ruby which always invokes references to functions, and is more similar to Python's. This has been the source of a few errors in my CoffeeScript programs, so it's worth keeping an eye out for cases where you intend to call a function without any arguments, and include parenthesis.
+If you don't pass any arguments with an invocation, CoffeeScript has no way of working out if you intend to invoke the function, or just treat it like a variable. In this respect, CoffeeScript's behavior differs from Ruby which always invokes references to functions, and is more similar to Python's. This has been the source of a few errors in my CoffeeScript programs, so it's worth keeping an eye out for cases where you intend to call a function without any arguments, and include parentheses.
 
 ## Function context
 
@@ -112,7 +112,7 @@ Context changes are rife within JavaScript, especially with event callbacks, so 
 
 Using the fat arrow instead of the thin arrow ensures that the function context will be bound to the local one. For example:
 
-*CoffeScript*:
+*CoffeeScript*:
 ``` coffeescript
 this.clickHandler = -> alert "clicked"
 element.addEventListener "click", (e) => this.clickHandler(e)

@@ -15,7 +15,7 @@ class Guitar extends Instrument
   constructor: ->
     super("Guitar")
 
-guitar = new Guitar()  
+guitar = new Guitar()
 guitar.sound() # Guitar sound
 ```
 *JavaScript*
@@ -52,6 +52,7 @@ You'll notice that in the example above, we're using the ```super()``` keyword. 
 Unless you override the constructor, by default CoffeeScript will invoke the parent's constructor when instances are created.
 
 CoffeeScript uses prototypal inheritance to automatically inherit all of a class's instance properties. This ensures that classes are dynamic; even if you add properties to a parent class after a child has been created, the property will still be propagated to all of its inherited children.
+
 *CoffeeScript*
 ``` coffeescript
 class Instrument
@@ -61,7 +62,7 @@ class Guitar extends Instrument
 
 Instrument::acoustic = true
 
-guitar = new Guitar()  
+guitar = new Guitar()
 console.log "Acoustic guitar" if guitar.acoustic
 ```
 *JavaScript*

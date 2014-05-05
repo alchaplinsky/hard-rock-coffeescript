@@ -9,7 +9,7 @@ class Band
 
   play: (song) ->
 
-band = new Band()  
+band = new Band()
 band.play('Brick in the wall')
 ```
 *JavaScript*
@@ -33,23 +33,23 @@ Context changes are rife within JavaScript, and earlier in the Syntax chapter we
 class Band
   members: 4
 
-  play: (song) =>
-    console.log "Band is playing #{song}"
+  play: () =>
+    console.log "#{@members} musicians are playing."
 
-band = new Band()  
+band = new Band()
 $('#play-button').click(band.play)
 ```
 *JavaScript*
 ``` javascript
 var Band, band,
-  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; Â
+  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); };
 Band = (function() {
   function Band() {
     this.play = __bind(this.play, this);
   }
   Band.prototype.members = 4;
-  Band.prototype.play = function(song) {
-    return console.log("Band is playing " + song);
+  Band.prototype.play = function() {
+    return console.log(this.members + " musicians are playing.");
   };
   return Band;
 })();
@@ -59,7 +59,7 @@ $('#play-button').click(band.play);
 ```
 
 
-As demonstrated in the example above, this is especially useful in event callbacks. Normally the sell() function would be invoked in the context of the #sell element. However, by using fat arrows for sell(), we're ensuring the correct context is being maintained, and that this.price equals 5.
+As demonstrated in the example above, this is especially useful in event callbacks. Normally the `play` method would be invoked in the context of the `#play-button` element. However, by using fat arrows for the `play` method, we're ensuring the correct context is being maintained, and that this.members equals 4.
 
 ### Static properties
 
@@ -77,7 +77,7 @@ class Band
 var Band;
 Band = (function() {
   function Band() {}
-  Band.play = function() {};
+  Band.play = function(song) {};
   Band.play('Brick in the wall');
   return Band;
 })();

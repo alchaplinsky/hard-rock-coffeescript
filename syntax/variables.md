@@ -44,7 +44,7 @@ CoffeeScript brings Ruby style string interpolation to JavaScript. Double quotes
 *CoffeeScript*
 ``` coffeescript
 band = 'Metallica'
-dialog = "- What is your favorite band? - {band}!"
+dialog = "- What is your favorite band? - #{band}!"
 ```
 
 *JavaScript*
