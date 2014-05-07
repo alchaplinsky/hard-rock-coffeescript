@@ -13,6 +13,7 @@
   * [Instance & Static properties](classes/instance_and_static_properties.md)
   * [Mixins and Extending classes](classes/extending_classes.md)
 * More CoffeeScript Goodness
+  * [Destructuring Assignment]('more/destructuring_assignment.md')
 * [Design Patterns](patterns/index.md)
   * [Singleton Pattern](patterns/singleton.md)
   * [Observer Pattern](patterns/observer.md)
