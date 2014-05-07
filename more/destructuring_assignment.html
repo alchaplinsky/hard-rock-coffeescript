@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Arrays and objects | </title>
+        <title>Destructuring Assignment | </title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -13,13 +13,13 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../syntax/operators_and_alises.html" />
+        <link rel="next" href="../patterns/index.html" />
         
         
-        <link rel="prev" href="../syntax/flow_control.html" />
+        <link rel="prev" href="../more/destructuring_assignment.html" />
         
 
-        <meta property="og:title" content="Arrays and objects | ">
+        <meta property="og:title" content="Destructuring Assignment | ">
         <meta property="og:site_name" content="">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -39,7 +39,7 @@
         <link rel="stylesheet" href="../gitbook/style.css">
         
         
-    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="2.4" data-basepath=".." data-revision="1399484166420">
+    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="4.1" data-basepath=".." data-revision="1399484166420">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -75,7 +75,7 @@
             <a href="https://github.com/alchapone/hard-rock-coffeescript/issues" target="blank">Questions and Issues</a>
         </li>
         <li>
-            <a href="https://github.com/alchapone/hard-rock-coffeescript/edit/master/syntax/arrays_and_objects.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/alchapone/hard-rock-coffeescript/edit/master/more/destructuring_assignment.md" target="blank">Edit and Contribute</a>
         </li>
         <li class="divider"></li>
         
@@ -280,7 +280,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 30%;min-width: 25%;"></div>
+        <div class="inner" style="width: 70%;min-width: 65%;"></div>
     </div>
     <div class="chapters">
     
@@ -298,21 +298,21 @@
     
         <a href="../syntax/arrays_and_objects.html" title="Arrays and objects" class="chapter done " data-progress="2.4" style="left: 30%;"></a>
     
-        <a href="../syntax/operators_and_alises.html" title="Operators and Aliases" class="chapter  " data-progress="2.5" style="left: 35%;"></a>
+        <a href="../syntax/operators_and_alises.html" title="Operators and Aliases" class="chapter done " data-progress="2.5" style="left: 35%;"></a>
     
-        <a href="../syntax/loops_and_comprehensions.html" title="Loops and comprehensions" class="chapter  " data-progress="2.6" style="left: 40%;"></a>
+        <a href="../syntax/loops_and_comprehensions.html" title="Loops and comprehensions" class="chapter done " data-progress="2.6" style="left: 40%;"></a>
     
-        <a href="../syntax/switch_and_try.html" title="Switch/Case and Try/Catch" class="chapter  " data-progress="2.7" style="left: 45%;"></a>
+        <a href="../syntax/switch_and_try.html" title="Switch/Case and Try/Catch" class="chapter done " data-progress="2.7" style="left: 45%;"></a>
     
-        <a href="../classes/index.html" title="Classes" class="chapter  new-chapter" data-progress="3" style="left: 50%;"></a>
+        <a href="../classes/index.html" title="Classes" class="chapter done new-chapter" data-progress="3" style="left: 50%;"></a>
     
-        <a href="../classes/inheritance.html" title="Inheritance &amp; Super" class="chapter  " data-progress="3.1" style="left: 55%;"></a>
+        <a href="../classes/inheritance.html" title="Inheritance &amp; Super" class="chapter done " data-progress="3.1" style="left: 55%;"></a>
     
-        <a href="../classes/instance_and_static_properties.html" title="Instance &amp; Static properties" class="chapter  " data-progress="3.2" style="left: 60%;"></a>
+        <a href="../classes/instance_and_static_properties.html" title="Instance &amp; Static properties" class="chapter done " data-progress="3.2" style="left: 60%;"></a>
     
-        <a href="../classes/extending_classes.html" title="Mixins and Extending classes" class="chapter  " data-progress="3.3" style="left: 65%;"></a>
+        <a href="../classes/extending_classes.html" title="Mixins and Extending classes" class="chapter done " data-progress="3.3" style="left: 65%;"></a>
     
-        <a href="../more/destructuring_assignment.html" title="Destructuring Assignment" class="chapter  " data-progress="4.1" style="left: 70%;"></a>
+        <a href="../more/destructuring_assignment.html" title="Destructuring Assignment" class="chapter done " data-progress="4.1" style="left: 70%;"></a>
     
         <a href="../patterns/index.html" title="Design Patterns" class="chapter  new-chapter" data-progress="5" style="left: 75%;"></a>
     
@@ -331,62 +331,111 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_13">
+                    <section class="normal" id="section-gitbook_7">
                     
-                        <h2 id="object-literals">Object literals</h2>
-<p>Object literals can be specified exactly as in JavaScript, with a pair of braces and key/value statements.
-However, like with function invocation, CoffeeScript makes the braces optional. In fact, you can also use
-indentation and new lines instead of comma separation.</p>
-<pre><code class="lang-coffeescript">rockStar = {<span class="hljs-attribute">tallent</span>: <span class="hljs-string">'30%'</span>, <span class="hljs-attribute">charisma</span>: <span class="hljs-string">'70%'</span>}
-
-rockStar = <span class="hljs-attribute">tallent</span>: <span class="hljs-string">'30%'</span>, <span class="hljs-attribute">charisma</span>: <span class="hljs-string">'70%'</span>
-
-rockStar =
-  <span class="hljs-attribute">tallent</span>: <span class="hljs-string">'30%'</span>
-  <span class="hljs-attribute">charisma</span>: <span class="hljs-string">'70%'</span>
-</code></pre>
-<h2 id="arrays">Arrays</h2>
-<p>Arrays definitions look pretty similar to object literals - coma separated if defined in a single line and you
-can use whitespace instead of comma separators, although the square brackets <code>[]</code> are still required.</p>
-<pre><code class="lang-coffeescript">nirvana = [<span class="hljs-string">'Bleach'</span>, <span class="hljs-string">'Nevermind'</span>, <span class="hljs-string">'Incesticide'</span>, <span class="hljs-string">'In Utero'</span>]
-
-nirvana = [
-  <span class="hljs-string">'Bleach'</span>
-  <span class="hljs-string">'Nevermind'</span>
-  <span class="hljs-string">'Incesticide'</span>
-  <span class="hljs-string">'In Utero'</span>
-]
-</code></pre>
-<p> CoffeeScript also strippes the trailing comma in arrays which is another common source of cross-browser errors.</p>
-<h3 id="ranges">Ranges</h3>
-<p>CoffeeScript takes inspiration from Ruby and provides you an ability to define ranges if you need an array of sequential integers.
-Ranges are created by two numerical values, the first and last positions in the range, separated by <code>..</code> or <code>...</code>.
-With two dots (1..4), the range is inclusive (1, 2, 3, 4); with three dots (1...4), the range excludes the end (1, 2, 3).</p>
+                        <h2 id="destructuring-assignment">Destructuring Assignment</h2>
+<p>To make extracting values from complex arrays and objects more convenient, CoffeeScript implements ECMAScript Harmony&#39;s
+proposed destructuring assignment syntax. When you assign an array or object literal to a value, CoffeeScript breaks up
+and matches both sides against each other, assigning the values on the right to the variables on the left. In the simplest
+case, it can be used for parallel assignment. Look at this little White Stripes example:</p>
 <p><em>CoffeeScript</em></p>
-<pre><code class="lang-coffeescript">rangeOne = [<span class="hljs-number">1.</span><span class="hljs-number">.10</span>]
-rangeTwo = [<span class="hljs-number">1.</span>.<span class="hljs-number">.10</span>]
+<pre><code class="lang-coffeescript">  guitar = <span class="hljs-string">"Meg White"</span>
+  drums  = <span class="hljs-string">"Jack White"</span>
+  [guitar, drums] = [drums, guitar] <span class="hljs-comment"># ['Jack White', 'Meg White']</span>
 </code></pre>
 <p><em>JavaScript</em></p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> rangeOne, rangeTwo;
-rangeOne = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>];
-rangeTwo = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>];
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> drums, guitar, _ref;
+guitar = <span class="hljs-string">"Meg White"</span>;
+drums = <span class="hljs-string">"Jack White"</span>;
+_ref = [drums, guitar], guitar = _ref[<span class="hljs-number">0</span>], drums = _ref[<span class="hljs-number">1</span>];
 </code></pre>
-<p>If, however, the range is specified immediately after a variable, CoffeeScript converts it into a slice() method call.</p>
-<pre><code class="lang-coffeescript">numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>][<span class="hljs-number">0.</span><span class="hljs-number">.1</span>] <span class="hljs-comment"># =&gt; [1, 2]</span>
-</code></pre>
-<p>In the example above, the range returns a new array, containing only the first two elements of the original array. You can also use the same syntax for replacing an array segment with another array.</p>
+<p>But it&#39;s also helpful for dealing with functions that return multiple values.</p>
 <p><em>CoffeeScript</em></p>
-<pre><code class="lang-coffeescript">numbers = [<span class="hljs-number">0.</span><span class="hljs-number">.9</span>]
-numbers[<span class="hljs-number">3.</span><span class="hljs-number">.5</span>] = [-<span class="hljs-number">3</span>, -<span class="hljs-number">4</span>, -<span class="hljs-number">5</span>] <span class="hljs-comment"># =&gt; [0, 1, 2, -3, -4, -5, 6, 7, 8, 9]</span>
+<pre><code class="lang-coffeescript">  <span class="hljs-function"><span class="hljs-title">bandMembers</span> = <span class="hljs-params">(name)</span> -&gt;</span>
+    <span class="hljs-comment"># Retrieving members via ajax</span>
+    [<span class="hljs-string">'Kurt Cobain'</span>, <span class="hljs-string">'Dave Grohl'</span>, <span class="hljs-string">'Krist Novoselic'</span>]
+  [guitar, drums, base] =  bandMembers <span class="hljs-string">"Nirvana"</span>
 </code></pre>
 <p><em>JavaScript</em></p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> numbers, _ref;
-numbers = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>];
-[].splice.apply(numbers, [<span class="hljs-number">3</span>, <span class="hljs-number">3</span>].concat(_ref = [-<span class="hljs-number">3</span>, -<span class="hljs-number">4</span>, -<span class="hljs-number">5</span>])), _ref;
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> bandMembers, base, drums, guitar, _ref;
+bandMembers = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(name)</span> {</span>
+  <span class="hljs-keyword">return</span> [<span class="hljs-string">'Kurt Cobain'</span>, <span class="hljs-string">'Dave Grohl'</span>, <span class="hljs-string">'Krist Novoselic'</span>];
+};
+_ref = bandMembers(<span class="hljs-string">"Nirvana"</span>), guitar = _ref[<span class="hljs-number">0</span>], drums = _ref[<span class="hljs-number">1</span>], base = _ref[<span class="hljs-number">2</span>];
 </code></pre>
-<p>What&#39;s neat, is that JavaScript allows you to call slice() on strings too, so you can use ranges with string to return a new subset of characters.</p>
+<p>Destructuring assignment can be used with any depth of array and object nesting, to help pull out deeply nested properties.</p>
 <p><em>CoffeeScript</em></p>
-<pre><code class="lang-coffeescript">lyrics = <span class="hljs-string">"So close no matter how far"</span>[<span class="hljs-number">0.</span><span class="hljs-number">.7</span>] <span class="hljs-comment"># =&gt; "So close"</span>
+<pre><code class="lang-coffeescript">ledZeppelin =
+  <span class="hljs-attribute">vocal</span>: <span class="hljs-string">"Robert Plant"</span>
+  <span class="hljs-attribute">drums</span>: <span class="hljs-string">"John Bonham"</span>
+  <span class="hljs-attribute">guitarist</span>:
+    <span class="hljs-attribute">name</span>:   <span class="hljs-string">"Jimmy Page"</span>
+    <span class="hljs-attribute">vocal</span>:  <span class="hljs-literal">false</span>
+    <span class="hljs-attribute">guitars</span>: [
+      <span class="hljs-string">"Gibson Les Paul"</span>
+      <span class="hljs-string">"Gibson EDS-1275"</span>
+    ]
+
+{<span class="hljs-attribute">guitarist</span>: {name, vocal, <span class="hljs-attribute">guitars</span>: [first, second]}} = ledZeppelin
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> first, ledZeppelin, name, second, vocal, _ref, _ref1;
+ledZeppelin = {
+  vocal: <span class="hljs-string">"Robert Plant"</span>,
+  drums: <span class="hljs-string">"John Bonham"</span>,
+  guitarist: {
+    name: <span class="hljs-string">"Jimmy Page"</span>,
+    vocal: <span class="hljs-literal">false</span>,
+    guitars: [<span class="hljs-string">"Gibson Les Paul"</span>, <span class="hljs-string">"Gibson EDS-1275"</span>]
+  }
+};
+_ref = ledZeppelin.guitarist, name = _ref.name, vocal = _ref.vocal, (_ref1 = _ref.guitars, first = _ref1[<span class="hljs-number">0</span>], second = _ref1[<span class="hljs-number">1</span>]);
+</code></pre>
+<p>Destructuring assignment can even be combined with splats.</p>
+<p><em>CoffeeScript</em></p>
+<pre><code class="lang-coffeescript">  name = <span class="hljs-string">"Ronnie James Dio"</span>
+  [firstname, middle, lastname] = name.split <span class="hljs-string">" "</span>
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> firstname, lastname, middle, name, _ref;
+name = <span class="hljs-string">"Ronnie James Dio"</span>;
+_ref = name.split(<span class="hljs-string">" "</span>), firstname = _ref[<span class="hljs-number">0</span>], middle = _ref[<span class="hljs-number">1</span>], lastname = _ref[<span class="hljs-number">2</span>];
+</code></pre>
+<p>Expansion can be used to retrieve elements from the end of an array without having to assign the rest of its values. It works in function parameter lists as well.</p>
+<p><em>CoffeeScript</em></p>
+<pre><code class="lang-coffeescript">  name = <span class="hljs-string">"Ronnie James (more middle names here) Dio"</span>
+  [firstname, ..., lastname] = name.split <span class="hljs-string">" "</span>
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> firstname, lastname, name, _ref;
+name = <span class="hljs-string">"Ronnie James (more middle names here) Dio"</span>;
+_ref = name.split(<span class="hljs-string">" "</span>), firstname = _ref[<span class="hljs-number">0</span>], lastname = _ref[_ref.length - <span class="hljs-number">1</span>];
+</code></pre>
+<p>Destructuring assignment is also useful when combined with class constructors to assign properties to your instance from an options object passed to the constructor.</p>
+<p><em>CoffeeScript</em></p>
+<pre><code class="lang-coffeescript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Frontman</span></span>
+  <span class="hljs-attribute">constructor</span>: <span class="hljs-function"><span class="hljs-params">(options)</span> -&gt;</span>
+    {<span class="hljs-property">@name</span>, <span class="hljs-property">@vocals</span>, <span class="hljs-property">@guitar</span>} = options
+
+jaymz = <span class="hljs-keyword">new</span> Frontman
+  <span class="hljs-attribute">name</span>: <span class="hljs-string">'James Hetfield'</span>
+  <span class="hljs-attribute">vocals</span>: <span class="hljs-literal">true</span>
+  <span class="hljs-attribute">guitar</span>: <span class="hljs-literal">true</span>
+</code></pre>
+<p><em>JavaScript</em></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> Frontman, jaymz;
+Frontman = (<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Frontman</span><span class="hljs-params">(options)</span> {</span>
+    <span class="hljs-keyword">this</span>.name = options.name, <span class="hljs-keyword">this</span>.vocals = options.vocals, <span class="hljs-keyword">this</span>.guitar = options.guitar;
+  }
+  <span class="hljs-keyword">return</span> Frontman;
+})();
+
+jaymz = <span class="hljs-keyword">new</span> Frontman({
+  name: <span class="hljs-string">'James Hetfield'</span>,
+  vocals: <span class="hljs-literal">true</span>,
+  guitar: <span class="hljs-literal">true</span>
+});
 </code></pre>
 
                     
@@ -397,10 +446,10 @@ numbers = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span
         </div>
 
         
-        <a href="../syntax/flow_control.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        <a href="../more/destructuring_assignment.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../syntax/operators_and_alises.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        <a href="../patterns/index.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
