@@ -1,16 +1,16 @@
 CACHE MANIFEST
-# Revision 1399620846968
+# Revision 1399621220449
 
 CACHE:
 index.html
-classes/extending_classes.html
 classes/index.html
-classes/inheritance.html
+classes/extending_classes.html
 classes/instance_and_static_properties.html
+classes/inheritance.html
 installation/index.html
 more/destructuring_assignment.html
-patterns/decorator.html
 patterns/adapter.html
+patterns/decorator.html
 patterns/factory.html
 patterns/index.html
 patterns/observer.html
