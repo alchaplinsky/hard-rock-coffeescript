@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1399620396299
+# Revision 1399620846968
 
 CACHE:
 index.html
@@ -9,8 +9,8 @@ classes/inheritance.html
 classes/instance_and_static_properties.html
 installation/index.html
 more/destructuring_assignment.html
-patterns/adapter.html
 patterns/decorator.html
+patterns/adapter.html
 patterns/factory.html
 patterns/index.html
 patterns/observer.html

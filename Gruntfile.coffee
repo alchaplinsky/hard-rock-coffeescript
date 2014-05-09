@@ -15,7 +15,7 @@ module.exports = (grunt) =>
       development:
         input: "./"
         github: "alchapone/hard-rock-coffeescript"
-        theme: "_theme"
+        theme: "/usr/local/lib/node_modules/gitbook/theme"
     "gh-pages":
       options:
         base: '_book'
