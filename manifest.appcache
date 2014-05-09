@@ -1,26 +1,26 @@
 CACHE MANIFEST
-# Revision 1399484166420
+# Revision 1399620396299
 
 CACHE:
 index.html
 classes/extending_classes.html
 classes/index.html
 classes/inheritance.html
-installation/index.html
 classes/instance_and_static_properties.html
+installation/index.html
 more/destructuring_assignment.html
+patterns/adapter.html
 patterns/decorator.html
 patterns/factory.html
-patterns/adapter.html
 patterns/index.html
 patterns/observer.html
+patterns/singleton.html
 syntax/arrays_and_objects.html
 syntax/flow_control.html
-patterns/singleton.html
-syntax/loops_and_comprehensions.html
 syntax/functions.html
-syntax/scoping.html
+syntax/loops_and_comprehensions.html
 syntax/operators_and_alises.html
+syntax/scoping.html
 syntax/switch_and_try.html
 syntax/variables.html
 gitbook/app.js
