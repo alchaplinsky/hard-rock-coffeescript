@@ -20,3 +20,5 @@
   * [Factory Pattern](patterns/factory.md)
   * [Decorator Pattern](patterns/decorator.md)
   * [Adapter Pattern](patterns/adapter.md)
+* [Conclusion](conclusion/index.md)
+* [References](conclusion/references.md)
