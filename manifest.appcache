@@ -1,12 +1,14 @@
 CACHE MANIFEST
-# Revision 1399621220449
+# Revision 1399688530463
 
 CACHE:
-index.html
-classes/index.html
 classes/extending_classes.html
-classes/instance_and_static_properties.html
+classes/index.html
 classes/inheritance.html
+classes/instance_and_static_properties.html
+index.html
+conclusion/index.html
+conclusion/references.html
 installation/index.html
 more/destructuring_assignment.html
 patterns/adapter.html
@@ -59,8 +61,8 @@ gitbook/jsrepl/sandbox.html
 gitbook/jsrepl/sandbox.js
 gitbook/print.css
 gitbook/style.css
-gitbook/plugins/gitbook-plugin-mixpanel/plugin.js
 gitbook/plugins/gitbook-plugin-mathjax/plugin.js
+gitbook/plugins/gitbook-plugin-mixpanel/plugin.js
 
 NETWORK:
 *
