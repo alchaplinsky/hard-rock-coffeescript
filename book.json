@@ -1,0 +1,22 @@
+{
+  "generator": "site",
+  "title": "Hard Rock CoffeeScript",
+  "description": null,
+  "github": null,
+  "githubHost": "https://github.com/",
+  "plugins": [],
+  "pluginsConfig": {
+    "fontSettings": {
+      "theme": "white",
+      "family": "sans",
+      "size": 2
+    }
+  },
+
+  "links": {
+    "home": "http://hardrockcoffeescript.org",
+    "about": "https://github.com/alchapone",
+    "issues": "https://github.com/alchapone/hard-rock-coffeescript/issues",
+    "contribute": "https://github.com/alchapone/hard-rock-coffeescript/pulls"
+  }
+}

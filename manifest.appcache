@@ -1,30 +1,30 @@
 CACHE MANIFEST
-# Revision 1399688641905
+# Revision 1399689266418
 
 CACHE:
+index.html
 classes/extending_classes.html
 classes/index.html
-classes/instance_and_static_properties.html
 classes/inheritance.html
-index.html
+classes/instance_and_static_properties.html
 conclusion/index.html
-installation/index.html
 conclusion/references.html
+installation/index.html
+more/destructuring_assignment.html
+patterns/adapter.html
 patterns/decorator.html
 patterns/factory.html
 patterns/index.html
 patterns/observer.html
 patterns/singleton.html
 syntax/arrays_and_objects.html
-patterns/adapter.html
-more/destructuring_assignment.html
 syntax/flow_control.html
+syntax/functions.html
 syntax/loops_and_comprehensions.html
 syntax/operators_and_alises.html
-syntax/functions.html
-syntax/variables.html
 syntax/scoping.html
 syntax/switch_and_try.html
+syntax/variables.html
 gitbook/app.js
 gitbook/fonts/anonymouspro/400.woff
 gitbook/fonts/anonymouspro/400i.woff
