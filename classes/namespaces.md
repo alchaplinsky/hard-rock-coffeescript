@@ -1,0 +1,1 @@
+## Namespaces in CoffeeScript
