@@ -8,31 +8,31 @@ With that in mind, let's take a look at an example:
 
 *CoffeScript*:
 ``` coffeescript
-func = -> "bar"
+singIt = -> "I love Rock'n'Roll"
 ```
 
 *JavaScript*:
 ``` javascript
-var func;
-func = function() {
-  return "bar";
+var singIt;
+singIt = function() {
+  return "I love Rock'n'Roll";
 };
 ```
-You can see in the resultant compilation, the -> is turned into a function statement, and the "bar" string is automatically returned.
+You can see in the resultant compilation, the ```->``` is turned into a function statement, and the "bar" string is automatically returned.
 
 As mentioned earlier, there's no reason why we can't use multiple lines, as long as we indent the function body properly.
 
 *CoffeScript*:
 ``` coffeescript
-func = ->
+singIt = ->
   # An extra line
-  "bar"
+  "I love Rock'n'Roll"
 ```
 *JavaScript*:
 ``` javascript
-var func;
-func = function() {
-  return "bar";
+var singIt;
+singIt = function() {
+  return "I love Rock'n'Roll";
 };
 ```
 ## Function arguments
@@ -73,6 +73,42 @@ times = function(a, b) {
   return a * b;
 };
 ```
+
+## Function splat arguments
+
+The JavaScript arguments object is a useful way to work with functions that accept variable numbers of arguments.
+CoffeeScript provides splats ```...```, both for function definition as well as invocation, making variable numbers of
+arguments a little bit more palatable.
+
+*CoffeeScript*:
+``` coffeescript
+topDrummers = (first, second, rest...) ->
+  console.log "Top 1 is #{first}"
+  console.log "Top 2 is #{second}"
+  console.log rest
+
+topDrummers 'John Bonham', 'Keith Moon', 'Neil Peart', 'Dave Grohl', 'Ringo Starr'
+# => Top 1 is John Bonham
+# => Top 2 is Keith Moon
+# => ['Neil Peart', 'Dave Grohl', 'Ringo Starr']
+```
+
+*JavaScript*:
+``` javascript
+var topDrummers,
+  __slice = [].slice;
+
+topDrummers = function() {
+  var first, rest, second;
+  first = arguments[0], second = arguments[1], rest = 3 <= arguments.length ? __slice.call(arguments, 2) : [];
+  console.log("Top 1 is " + first);
+  console.log("Top 2 is " + second);
+  return console.log(rest);
+};
+
+topDrummers('John Bonham', 'Keith Moon', 'Neil Peart', 'Dave Grohl', 'Ringo Starr');
+```
+
 
 ## Function invocation
 

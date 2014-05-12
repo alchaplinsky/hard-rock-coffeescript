@@ -55,15 +55,3 @@ dialog = "- What is your favorite band? - "+band+"!";
 ```
 
 As you can see in the example above, multiline strings are also allowed, without having to prefix each line with a +:
-
-## Comments
-Comments are in the same format as Ruby comments, starting with a hash character.
-``` coffeescript
-# Commented line of code
-```
-Multiline comments are also supported, and are brought forward to the generated JavaScript. They're enclosed by three hash characters.
-``` coffeescript
-###
-  Commented block of code
-###
-````

@@ -7,8 +7,9 @@ It increases code expressiveness, speeds up development and simplifies maintaina
 multiple pitfalls you have with JavaScript.
 
 The contents of this book should hopefully provide sufficient information to get started using CoffeScript in development
-of web applications and open source products.
+of web applications and having fun while working on open source products.
 
-We've covered enough all object-oriented abilities of CoffeScript that are familiar and useful to every developer.
+We've covered object-oriented abilities of CoffeScript which may make you feel more comfortable in writing and structuring
+your frontend code. Designing with classes and objects is more high level, than writing tons of spagetti callback oriented code.
 
-So if you still haven't written a single line of code on CoffeeScript, I encourage you to get started  immediately - you'll love it!
+So if you still haven't written a single line of code on CoffeeScript, I encourage you to get started immediately - you'll love it!

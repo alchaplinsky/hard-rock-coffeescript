@@ -84,3 +84,19 @@ if true isnt true
   alert "Try to rock as hard as you can!"
 ```
 You may have noticed in the examples above, that CoffeeScript is converting `==` operators into `===` and `!=` into `!==`. This is one of my favorite features to the language, and yet one of the most simple. What's the reasoning behind this? Well frankly JavaScript's type coercion is a bit odd, and its equality operator coerces types in order to compare them, leading to some confusing behaviors and the source of many bugs.
+
+### Chained Comparisons
+
+CoffeeScript borrows chained comparisons from Python — making it easy to test if a value falls within a certain range.
+
+*CoffeeScript*
+``` coffeescript
+PinkFloydAlbums = 14
+fromTenToTwenty = 20 > PinkFloydAlbums > 10 # true
+```
+*JavaScript*
+``` javascript
+var PinkFloydAlbums, fromTenToTwenty;
+PinkFloydAlbums = 14;
+fromTenToTwenty = (20 > PinkFloydAlbums && PinkFloydAlbums > 10);
+```
