@@ -1,17 +1,19 @@
-require([
+define([
     "jQuery",
     "utils/storage",
-    "utils/analytic",
     "utils/sharing",
+    "utils/appcache",
 
+    "core/events",
+    "core/font-settings",
     "core/state",
     "core/keyboard",
     "core/navigation",
     "core/progress",
     "core/sidebar",
     "core/search"
-], function($, storage, analytic, sharing, state, keyboard, navigation, progress, sidebar, search){
-    $(document).ready(function() {
+], function($, storage, appCache, sharing, events, fontSettings, state, keyboard, navigation, progress, sidebar, search){
+    var start = function(config) {
         var $book;
         $book = state.$book;
 
@@ -29,10 +31,23 @@ require([
         // Init keyboard
         keyboard.init();
 
+        // Init appcache
+        appCache.init();
+
         // Bind sharing button
         sharing.init();
         
         // Init navigation
         navigation.init();
-    });
+
+        //Init font settings 
+        fontSettings.init();
+
+        events.trigger("start", config);
+    }
+
+    return {
+        start: start,
+        events: events
+    };
 });
