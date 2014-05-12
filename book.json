@@ -1,0 +1,9 @@
+{
+  "generator": "site",
+  "title": "Hard Rock CoffeeScript",
+  "description": "CoffeeScript Bookx",
+  "home": "http://hardrockcoffeescript.org",
+  "links": {
+    "contribute": "https://github.com/alchapone/hard-rock-coffeescript/pulls"
+  }
+}
