@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1399935959492
+# Revision 1399937115930
 
 CACHE:
 index.html
@@ -16,8 +16,8 @@ patterns/factory.html
 patterns/index.html
 patterns/observer.html
 patterns/singleton.html
-syntax/arrays_and_objects.html
 syntax/destructuring_assignment.html
+syntax/arrays_and_objects.html
 syntax/flow_control.html
 syntax/functions.html
 syntax/index.html

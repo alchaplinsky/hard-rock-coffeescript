@@ -36,30 +36,69 @@
     </head>
     <body>
         
+
         <link rel="stylesheet" href="../gitbook/style.css">
         
+
+
         
-    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="2.2" data-basepath=".." data-revision="1399935959492">
+    <div class="book" data-github="alchapone/hard-rock-coffeescript" data-level="2.2" data-basepath=".." data-revision="1399937115929">
     <div class="book-header">
     <!-- Actions Left -->
     
-    <a href="https://github.com/alchapone/hard-rock-coffeescript" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    <a href="https://github.com/alchapone/hard-rock-coffeescript" target="_blank" class="btn pull-left"><i class="fa fa-bookmark-o"></i></a>
     
     <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
     <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+    <span id="font-settings-wrapper">
+        <a href="#" class="btn pull-left toggle-font-settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+	<div class="dropdown-caret">
+  <span class="caret-outer"></span>
+  <span class="caret-inner"></span>
+</div>
+
+	<div class="btn-group btn-block">
+		<button id="reduce-font-size" class="btn btn-default">A</button>
+		<button id="enlarge-font-size" class="btn btn-default">A</button>
+	</div>
+
+	<ul class="list-group font-family-list">
+		<li class="list-group-item" data-font="0">Serif</li>
+		<li class="list-group-item" data-font="1">Sans</li>
+	</ul>
+
+	<div class="btn-group btn-group-xs btn-block color-theme-list">
+	  <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+	  <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+	  <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+	</div>
+</div>
+
+    </span>
 
     <!-- Actions Right -->
+    
     <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    
+    
     <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    
+    
     <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+    
 
     
-    <a href="https://github.com/alchapone/hard-rock-coffeescript/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/alchapone/hard-rock-coffeescript/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+    <a href="https://github.com/alchapone/hard-rock-coffeescript/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/alchapone/hard-rock-coffeescript/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
-    <h1><a href="../" >Hard Rock CoffeeScript</a></h1>
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../" >Hard Rock CoffeeScript</a>
+    </h1>
 </div>
 
     <div class="book-summary">
@@ -71,14 +110,24 @@
         <li>
             <a href="https://github.com/alchapone" target="blank">About the author</a>
         </li>
+        
+
+        
         <li>
             <a href="https://github.com/alchapone/hard-rock-coffeescript/issues" target="blank">Questions and Issues</a>
         </li>
+        
+
+        
         <li>
             <a href="https://github.com/alchapone/hard-rock-coffeescript/edit/master/syntax/functions.md" target="blank">Edit and Contribute</a>
         </li>
+        
+
+        
         <li class="divider"></li>
         
+
         <li data-level="0" data-path="index.html">
             <a href="../"><i class="fa fa-check"></i> Introduction</a>
         </li>
@@ -276,6 +325,13 @@
                 
                 
             </li>
+        
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank">Generated using GitBook</a>
+        </li>
         
     </ul>
 </div>
@@ -477,15 +533,16 @@ element.addEventListener(<span class="hljs-string">"click"</span>, __bind(<span 
         </div>
 
         
-        <a href="../syntax/variables.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        <a href="../syntax/variables.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../syntax/flow_control.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        <a href="../syntax/flow_control.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
 
         
+
         <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
 for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
         </script>
@@ -494,38 +551,68 @@ for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElemen
         <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
         <script src="../gitbook/app.js"></script>
         
-    </body>
-    <!-- Yandex.Metrika informer -->
-<a href="https://metrika.yandex.ru/stat/?id=24890231&amp;from=informer"
-target="_blank" rel="nofollow"><img src="//bs.yandex.ru/informer/24890231/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
-style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:24890231,lang:'ru'});return false}catch(e){}"/></a>
-<!-- /Yandex.Metrika informer -->
 
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-(function (d, w, c) {
-    (w[c] = w[c] || []).push(function() {
-        try {
-            w.yaCounter24890231 = new Ya.Metrika({id:24890231,
-                    webvisor:true,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true});
-        } catch(e) { }
-    });
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mixpanel/plugin.js"></script>
+    
 
-    var n = d.getElementsByTagName("script")[0],
-        s = d.createElement("script"),
-        f = function () { n.parentNode.insertBefore(s, n); };
-    s.type = "text/javascript";
-    s.async = true;
-    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+    
+    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
 
-    if (w.opera == "[object Opera]") {
-        d.addEventListener("DOMContentLoaded", f, false);
-    } else { f(); }
-})(document, window, "yandex_metrika_callbacks");
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {};
+    gitbook.start(config);
+});
 </script>
-<noscript><div><img src="//mc.yandex.ru/watch/24890231" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+
+        <!-- Yandex.Metrika informer -->
+    <a href="https://metrika.yandex.ru/stat/?id=24890231&amp;from=informer"
+    target="_blank" rel="nofollow"><img src="//bs.yandex.ru/informer/24890231/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+    style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:24890231,lang:'ru'});return false}catch(e){}"/></a>
+    <!-- /Yandex.Metrika informer -->
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter24890231 = new Ya.Metrika({id:24890231,
+                        webvisor:true,
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true});
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="//mc.yandex.ru/watch/24890231" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-50922620-1', 'hardrockcoffeescript.org');
+    ga('send', 'pageview');
+
+  </script>
+    </body>
 </html>

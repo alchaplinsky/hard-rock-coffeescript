@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 
+{% block htmlTag %}manifest="{{ basePath }}/manifest.appcache"{% endblock %}
 {% block title %}{{ progress.current.title }}{% parent %}{% endblock %}
 {% block content %}
     <div class="book" {% if githubId %}data-github="{{ githubId }}"{% endif %} data-level="{{ progress.current.level }}" data-basepath="{{ basePath }}" data-revision="{{ revision }}">
@@ -27,11 +28,39 @@
         </div>
 
         {% if progress.current.prev and progress.current.prev.path %}
-        <a href="{{ basePath }}/{{ progress.current.prev.path|mdLink }}" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        <a href="{{ basePath }}/{{ progress.current.prev.path|mdLink }}" class="navigation navigation-prev {% if !progress.current.next or !progress.current.next.path %}navigation-unique{% endif %}"><i class="fa fa-angle-left"></i></a>
         {% endif %}
         {% if progress.current.next and progress.current.next.path %}
-        <a href="{{ basePath }}/{{ progress.current.next.path|mdLink }}" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        <a href="{{ basePath }}/{{ progress.current.next.path|mdLink }}" class="navigation navigation-next {% if !progress.current.prev or !progress.current.prev.path %}navigation-unique{% endif %}"><i class="fa fa-angle-right"></i></a>
         {% endif %}
     </div>
 </div>
+{% endblock %}
+
+{% block javascript %}
+{% parent %}
+{% for resource in plugins.resources.js %}
+    {% if resource.url %}
+    <script src="{{ resource.url }}"></script>
+    {% else %}
+    <script src="{{ staticBase }}/plugins/{{ resource.path }}"></script>
+    {% endif %}
+{% endfor %}
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {% autoescape false %}{{ pluginsConfig }}{% endautoescape %};
+    gitbook.start(config);
+});
+</script>
+{% endblock %}
+
+{% block style %}
+{% parent %}
+{% for resource in plugins.resources.css %}
+    {% if resource.url %}
+    <link rel="stylesheet" href="{{ resource.url }}">
+    {% else %}
+    <link rel="stylesheet" href="{{ staticBase }}/plugins/{{ resource.path }}">
+    {% endif %}
+{% endfor %}
 {% endblock %}

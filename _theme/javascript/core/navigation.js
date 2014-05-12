@@ -1,38 +1,42 @@
 define([
     "jQuery",
-    "utils/analytic",
+    "utils/path",
+    "core/events",
     "core/state",
     "core/search",
     "core/progress",
     "core/exercise",
-    "core/quiz"
-], function($, analytic, state, search, progress, exercises, quiz) {
+    "core/quiz",
+    "core/loading"
+], function($, path, events, state, search, progress, exercises, quiz, loading) {
     var prev, next;
     var githubCountStars, githubCountWatch;
 
-    var usePushState = !navigator.userAgent.match('CriOS') && (typeof history.pushState !== "undefined");
+    var usePushState = (typeof history.pushState !== "undefined");
 
-    var updateHistory = function(url, title) {
-        history.pushState({ path: url }, title, url);
-    };
+    var handleNavigation = function(relativeUrl, push) {
+        var url = path.isAbsolute(relativeUrl) ? relativeUrl : path.join(path.dirname(window.location.pathname), relativeUrl);
+        console.log("navigate to ", url, "baseurl="+relativeUrl);
 
-    var handleNavigation = function(url, push) {
         if (!usePushState) {
             // Refresh the page to the new URL if pushState not supported
-            location.href = url;
+            location.href = relativeUrl;
             return
         }
 
-        return $.get(url)
+        return loading.show($.get(url)
         .done(function (html) {
-            if (push) updateHistory(url, null);
-            
+            // Push url to history
+            if (push) history.pushState({ path: url }, null, url);
+
+            // Replace html content
             html = html.replace( /<(\/?)(html|head|body)([^>]*)>/ig, function(a,b,c,d){
                 return '<' + b + 'div' + ( b ? '' : ' data-element="' + c + '"' ) + d + '>';
             });
 
             var $page = $(html);
             var $pageHead = $page.find("[data-element=head]");
+            var $pageBody = $page.find('.book');
 
             // Merge heads
             var headContent = $pageHead.html()
@@ -42,22 +46,20 @@ define([
             });
             $("head").html(headContent);
 
-            // Update header, body
-            $('.book-header').html($page.find('.book-header').html());
-            $('.book-body').html($page.find('.book-body').html());
-
-            // Update summary
+            // Merge body
             var scrollPosition = $('.book-summary .summary').scrollTop();
-            $('.book-summary').html($page.find('.book-summary').html());
+            $pageBody.toggleClass("with-summary", $(".book").hasClass("with-summary"))
+
+            $(".book").replaceWith($pageBody);
             $('.book-summary .summary').scrollTop(scrollPosition);
 
             // Update state
             state.update($("html"));
             preparePage();
         })
-        .fail(function () {
-            location.href = url;
-        });
+        .fail(function (e) {
+            location.href = relativeUrl;
+        }));
     };
 
     var updateGitHubCounts = function() {
@@ -110,7 +112,7 @@ define([
         }
 
         // Send to mixpanel
-        analytic.track("page.view");
+        events.trigger("page.change");
     };
 
     var handlePagination = function (e) {
@@ -131,7 +133,7 @@ define([
         if (url) handleNavigation(url, true);
     };
 
-    
+
 
     var init = function() {
         // Prevent cache so that using the back button works
@@ -148,14 +150,13 @@ define([
             if (event.state === null) {
                 return;
             }
-
             return handleNavigation(event.state.path, false);
         };
 
         $(document).on('click', ".navigation-prev", handlePagination);
         $(document).on('click', ".navigation-next", handlePagination);
         $(document).on('click', ".summary [data-path] a", handlePagination);
-        
+
         $(window).resize(updateNavigationPosition);
 
         // Prepare current page

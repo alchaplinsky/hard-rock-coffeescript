@@ -1,8 +1,29 @@
-.book .book-body .page-wrapper .page-inner section.normal {
-    padding: 25px;
-    padding-top: 15px;
-    background-color: white;
+.book.color-theme-1 .book-body .page-wrapper .page-inner section.normal {
+    color:@page-color-1;
 
+    pre, code {
+        background: #fdf6e3;
+        color: #657b83;
+        border-color: darken(#fdf6e3, 15%);
+
+        @import "./highlight/sepia.less";
+    }
+}
+.book.color-theme-2 .book-body .page-wrapper .page-inner section.normal {
+    color:@page-color-2;
+
+    pre, code {
+        background: black;
+        color: #eaeaea;
+        border-color: #000;
+
+        @import "./highlight/night.less";
+    }
+}
+.book .book-body .page-wrapper .page-inner section.normal {
+    padding-bottom: 25px;
+    padding-top: 15px;
+    color:@page-color;
 
     & > *:first-child {
         margin-top: 0 !important; }
@@ -51,26 +72,25 @@
         font-size: inherit; }
 
     h1 {
-        font-size: 28px;
-        color: black; }
+        font-size: 2.5em;
+    }
 
     h2 {
-        font-size: 24px;
+        font-size: 2em;
         border-bottom: 1px solid #eee;
-        color: black; }
+    }
 
     h3 {
-        font-size: 18px; }
+        font-size: 1.5em; }
 
     h4 {
-        font-size: 16px; }
+        font-size: 1.2em; }
 
     h5 {
-        font-size: 14px; }
+        font-size: 1em; }
 
     h6 {
-        color: #777777;
-        font-size: 14px; }
+        font-size: 1em; }
 
     p, blockquote, ul, ol, dl, table, pre {
         margin: 15px 0; }
@@ -272,24 +292,12 @@
         white-space: pre;
         border: none;
         background: transparent;
-    }
 
-    .highlight pre {
-        color: #555;
-        background-color: #f8f8f8;
-        border: 1px solid #ddd;
-        font-size: 12px;
-        line-height: 1.5em;
-        overflow: auto;
-        padding: 20px;
-        border-radius: 3px;
+        @import "./highlight/white.less";
     }
 
     pre {
-        color: #555;
-        background-color: #f8f8f8;
-        border: 1px solid #ddd;
-        font-size: 12px;
+        font-size: inherit;
         line-height: 1.5em;
         overflow: auto;
         padding: 20px;

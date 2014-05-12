@@ -1,21 +1,35 @@
 <div class="book-header">
     <!-- Actions Left -->
-    {% if githubId %}
-    <a href="{{ githubHost }}{{ githubId }}" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    {% if options.links.home !== false and (options.links.home != null or githubId) %}
+    <a href="{{ options.links.home|default(githubHost+githubId) }}" target="_blank" class="btn pull-left"><i class="fa fa-bookmark-o"></i></a>
     {% endif %}
     <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
     <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+    <span id="font-settings-wrapper">
+        <a href="#" class="btn pull-left toggle-font-settings"><i class="fa fa-font"></i>
+        </a>
+        {% include "./font-settings.html" %}
+    </span>
 
     <!-- Actions Right -->
+    {% if options.links.sharing.google !== false %}
     <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    {% endif %}
+    {% if options.links.sharing.facebook !== false %}
     <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    {% endif %}
+    {% if options.links.sharing.twitter !== false %}
     <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+    {% endif %}
 
     {% if githubId %}
-    <a href="{{ githubHost }}{{ githubId }}/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="{{ githubHost }}{{ githubId }}/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+    <a href="{{ githubHost }}{{ githubId }}/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="{{ githubHost }}{{ githubId }}/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     {% endif %}
 
     <!-- Title -->
-    <h1><a href="{{ basePath }}/" >{{ title }}</a></h1>
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="{{ basePath }}/" >{{ title }}</a>
+    </h1>
 </div>
