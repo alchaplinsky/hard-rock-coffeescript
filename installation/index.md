@@ -1,5 +1,5 @@
 # Installation
-In order to get started with CoffeScript you need to compile it to JavaScript nativly supported by browsers. Here you have couple options:
+In order to get started with CoffeeScript you need to compile it to JavaScript nativly supported by browsers. Here you have couple options:
 
 You can use the browser-based CoffeeScript compiler, by including [compiler script](http://jashkenas.github.io/coffee-script/extras/coffee-script.js) in a page, marking up any CoffeeScript script tags with the correct type like:
 ```html
