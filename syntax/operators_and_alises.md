@@ -94,7 +94,7 @@ if ((_ref = singer.playTheGuitar()) != null) {
 ```
 ### Callable check
 Similarly you can check that a property is actually a function, and callable, by placing the existential
-operator right before the parens. If the property doesn't exist, or isn't a function, it simply won't get called.
+operator right before the parentheses. If the property doesn't exist, or isn't a function, it simply won't get called.
 
 *CoffeeScript*
 ``` coffeescript
