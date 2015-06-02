@@ -35,9 +35,9 @@ The coffee command takes a bunch of useful options like:
 
 ```-b, --bare```	 Compile the JavaScript without the top-level function safety wrapper.
 
-You can check out all options related to your version of coffe-script by running:
+You can check out all options related to your version of coffee-script by running:
 
     coffee --help
 
-Of course there are more convenient ways to automatically compile CoffeScript
+Of course there are more convenient ways to automatically compile CoffeeScript
 instead of running ```coffee``` command in console. We'll take a look at them later.
