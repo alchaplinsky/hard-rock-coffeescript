@@ -93,7 +93,7 @@ Expansion can be used to retrieve elements from the end of an array without havi
 *CoffeeScript*
 ```coffeescript
   name = "Ronnie James (more middle names here) Dio"
-  [firstname, ..., lastname] = name.split " "
+  [firstname, middle..., lastname] = name.split " "
 ```
 
 *JavaScript*
