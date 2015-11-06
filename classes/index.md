@@ -77,11 +77,11 @@ So constructor is called when we use ```new``` keyword along with class name. An
 *CoffeeScript*
 ``` coffeescript
 gibson = new Guitar("Les Paul")
-alert "Guitar is a #{gibson.name}"
+alert "Guitar is a #{gibson.type}"
 ```
 *JavaScript*
 ``` javascript
 var gibson;
 gibson = new Guitar("Les Paul");
-alert("Guitar is a " + gibson.name);
+alert("Guitar is a " + gibson.type);
 ```
