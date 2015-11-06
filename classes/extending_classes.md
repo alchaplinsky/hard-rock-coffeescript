@@ -1,6 +1,6 @@
 ## Mixins and Extending classes
 
-Mixins are not something supported natively by CoffeeScript, for the good reason that they can be trivially implemented yourself. For example, here's two functions, ```extend()``` and ```include()``` that'll add class and instance properties respectively to a class.
+Mixins are not something supported natively by CoffeeScript, for the good reason that they can be trivially implemented yourself. For example, here are two functions, ```extend()``` and ```include()``` that'll add class and instance properties respectively to a class.
 
 *CoffeeScript*
 ``` coffeescript
