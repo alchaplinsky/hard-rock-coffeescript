@@ -70,17 +70,17 @@ How about defining class (i.e. static) properties? Well, it turns out that insid
 class Band
   this.play = (song) ->
 
-  Band.play('Brick in the wall')
+Band.play('Brick in the wall')
 ```
-*JavaScript
+*JavaScript*
 ``` javascript
 var Band;
 Band = (function() {
   function Band() {}
   Band.play = function(song) {};
-  Band.play('Brick in the wall');
   return Band;
 })();
+Band.play('Brick in the wall');
 ```
 In fact, as you may remember, CoffeeScript aliases this to @, which lets you write static properties even more succinctly:
 
@@ -89,5 +89,5 @@ In fact, as you may remember, CoffeeScript aliases this to @, which lets you wri
 class Band
   @play = (song) ->
 
-  Band.play('Brick in the wall')
+Band.play('Brick in the wall')
 ```
