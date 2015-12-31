@@ -38,6 +38,7 @@ switch (member) {
 ```
 It is also possible to use switch statement in place of expression: ```switch``` (without condition),  ```when``` condition,
  ```else``` the default case.
+ 
 *CoffeeScript*
 ``` coffeescript
 a = switch
