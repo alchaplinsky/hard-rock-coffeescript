@@ -36,6 +36,16 @@ switch (member) {
     goHome;
 }
 ```
+It is also possible to use switch statement in place of expression: ```switch``` (without condition),  ```when``` condition,
+ ```else``` the default case.
+ 
+*CoffeeScript*
+``` coffeescript
+a = switch
+  when 1 < 0 then goStudy
+  when 3 > 2 then 'ok'
+  else 'smthng'
+```
 
 ## Try/Catch/Finally
 
